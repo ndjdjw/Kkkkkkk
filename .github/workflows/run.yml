@@ -1,12 +1,12 @@
-name: جلب فيديوهات يوتيوب عبر RSS
+name: جلب فيديوهات يوتيوب (بدون مفتاح)
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */12 * * *'
+    - cron: '0 */6 * * *'
 
 jobs:
-  fetch:
+  fetch-videos:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -14,50 +14,68 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
-      
-      - name: إنشاء مجلد البيانات
-        run: mkdir -p data
-      
-      - name: جلب وتحويل RSS
+
+      - name: إعداد Python وتثبيت الأدوات
         run: |
-          RSS_URL="https://www.youtube.com/feeds/videos.xml?channel_id=UCWv7vMbMWH4-V0ZXdmDpPBA"
+          sudo apt update
+          sudo apt install -y python3-pip
+          pip install yt-dlp
+          mkdir -p data
+
+      - name: جلب آخر فيديوهات القناة
+        run: |
+          CHANNEL_URL="https://www.youtube.com/@programmingwithmosh"
           
-          # جلب RSS وحفظه كملف مؤقت
-          curl -s "$RSS_URL" > feed.xml
-          
-          # بداية ملف JSON
-          echo '{"videos": []}' > data/videos.json
-          
-          # استخراج البيانات وتنسيقها
-          grep -oP '(?<=<entry>).*?(?=</entry>)' feed.xml | while read -r entry; do
-            videoId=$(echo "$entry" | grep -oP '(?<=<yt:videoId>).*?(?=</yt:videoId>)')
-            title=$(echo "$entry" | grep -oP '(?<=<title>).*?(?=</title>)')
-            published=$(echo "$entry" | grep -oP '(?<=<published>).*?(?=</published>)')
-            
-            if [ -n "$videoId" ] && [ -n "$title" ]; then
-              jq --arg id "$videoId" \
-                 --arg title "$title" \
-                 --arg published "$published" \
-                 '.videos += [{
-                   "videoId": $id,
-                   "title": $title,
-                   "published": $published,
-                   "channel": "Programming with Mosh",
-                   "thumbnails": {
-                     "medium": {
-                       "url": ("https://i.ytimg.com/vi/\($id)/mqdefault.jpg")
-                     }
-                   }
-                 }]' data/videos.json > tmp.json && mv tmp.json data/videos.json
-            fi
-          done
-          
-          echo "✅ تم جلب $(jq '.videos | length' data/videos.json) فيديو"
-      
+          # استخدام yt-dlp مع خيارات تجنب الحظر
+          yt-dlp \
+            --ignore-errors \
+            --no-warnings \
+            --extractor-args "youtube:player-client=android" \
+            --flat-playlist \
+            --dump-json \
+            --playlist-end 15 \
+            "$CHANNEL_URL" 2>/dev/null | jq -s '.' > raw.json
+
+          # إذا فشل السابق، جرب طريقة بديلة
+          if [ ! -s raw.json ]; then
+            yt-dlp \
+              --ignore-errors \
+              --no-warnings \
+              --extractor-args "youtube:player-client=web" \
+              --flat-playlist \
+              --dump-json \
+              --playlist-end 15 \
+              "$CHANNEL_URL" 2>/dev/null | jq -s '.' > raw.json
+          fi
+
+          # تحويل البيانات إلى الصيغة المطلوبة
+          jq '
+            {
+              videos: [
+                .[] | {
+                  videoId: .id,
+                  title: .title,
+                  channel: "Programming with Mosh",
+                  thumbnails: {
+                    medium: {
+                      url: "https://i.ytimg.com/vi/\(.id)/mqdefault.jpg"
+                    }
+                  }
+                }
+              ]
+            }
+          ' raw.json > data/videos.json
+
+          # تنظيف
+          rm -f raw.json
+
       - name: حفظ التغييرات
         run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'actions@github.com'
+          COUNT=$(jq '.videos | length' data/videos.json)
+          echo "✅ تم جلب $COUNT فيديو"
+
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
           git add data/videos.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "تحديث الفيديوهات"
+          git diff --quiet && git diff --staged --quiet || git commit -m "تحديث الفيديوهات $(date)"
           git push
