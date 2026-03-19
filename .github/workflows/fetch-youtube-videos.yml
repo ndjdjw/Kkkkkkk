@@ -15,51 +15,144 @@ jobs:
 
     steps:
       - name: استيراد المستودع
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
 
       - name: إنشاء مجلد البيانات
-        run: mkdir -p data  # 🔥 هذا السطر مهم جداً
+        run: mkdir -p data
 
-      - name: جلب الفيديوهات من يوتيوب
+      - name: جلب الفيديوهات من يوتيوب (أعلى المجالات طلباً 2026)
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: |
-          # قائمة كلمات البحث
-          QUERIES=("تفسير قرآن" "حديث نبوي" "فقه إسلامي" "عقيدة إسلامية" "سيرة نبوية")
+          # 🔥 قائمة كلمات البحث الأكثر طلباً والأعلى ربحاً 2026
+          QUERIES=(
+            # 1️⃣ الذكاء الاصطناعي (AI) - الأول عالمياً [citation:1][citation:5]
+            "Artificial Intelligence course"
+            "Machine Learning tutorial"
+            "Deep Learning for beginners"
+            "ChatGPT prompt engineering"
+            "AI for business"
+            
+            # 2️⃣ علوم البيانات (Data Science) - ثاني أعلى طلب [citation:5][citation:7]
+            "Data Science full course"
+            "Python for data analysis"
+            "SQL for data science"
+            "Power BI tutorial"
+            "Data visualization with Tableau"
+            
+            # 3️⃣ الأمن السيبراني (Cybersecurity) - رواتب عالية جداً [citation:2][citation:4]
+            "Cybersecurity for beginners"
+            "Ethical hacking course"
+            "Network security fundamentals"
+            "CISSP certification training"
+            "Information security basics"
+            
+            # 4️⃣ الحوسبة السحابية (Cloud Computing) - طلب عالمي [citation:2][citation:6]
+            "AWS certification course"
+            "Microsoft Azure tutorial"
+            "Google Cloud platform"
+            "DevOps engineer course"
+            "Docker and Kubernetes"
+            
+            # 5️⃣ تطوير البرمجيات (Software Development) [citation:3][citation:5]
+            "Python programming full course"
+            "JavaScript complete guide"
+            "React js tutorial"
+            "Full stack web development"
+            "Mobile app development"
+            
+            # 6️⃣ إدارة المشاريع (Project Management) - رواتب ممتازة [citation:2][citation:4]
+            "Project Management Professional PMP"
+            "Agile scrum master course"
+            "Project management basics"
+            "CAPM certification"
+            
+            # 7️⃣ التسويق الرقمي (Digital Marketing) - مطلوب جداً [citation:5][citation:7]
+            "Digital marketing complete course"
+            "SEO tutorial 2026"
+            "Social media marketing"
+            "Google Analytics course"
+            "Facebook ads mastery"
+            
+            # 8️⃣ المالية والمحاسبة (Finance) - رواتب عالية [citation:1][citation:8]
+            "Financial accounting course"
+            "Investment banking basics"
+            "QuickBooks online training"
+            "CPA exam preparation"
+            "Stock market investing"
+            
+            # 9️⃣ تحليلات الأعمال (Business Analytics) - مزيج قوي [citation:5][citation:8]
+            "Business analytics course"
+            "Data driven decision making"
+            "Business intelligence tools"
+            "Excel for business"
+            
+            # 🔟 مهارات شخصية (Soft Skills) - طلب دائم [citation:1][citation:3]
+            "Graphic design complete course"
+            "UI UX design tutorial"
+            "Communication skills training"
+            "Leadership development"
+            "Public speaking course"
+          )
           
-          # ملف مؤقت لتجميع النتائج
-          echo "" > videos_list.json
+          # ملف مؤقت
+          > all_results.json
+          TOTAL=0
           
           for QUERY in "${QUERIES[@]}"; do
             echo "🔍 البحث عن: $QUERY"
             
-            # استدعاء YouTube API
-            curl -s "https://www.googleapis.com/youtube/v3/search?part=snippet&q=$QUERY&type=video&videoLicense=creativeCommon&maxResults=10&key=$YOUTUBE_API_KEY" \
-              | jq '.items[] | {query: "'"$QUERY"'", videoId: .id.videoId, title: .snippet.title, channel: .snippet.channelTitle, publishedAt: .snippet.publishedAt, thumbnails: .snippet.thumbnails}' \
-              >> videos_list.json
+            # استدعاء API (5 فيديوهات لكل كلمة بحث)
+            curl -s "https://www.googleapis.com/youtube/v3/search?part=snippet&q=$QUERY&type=video&videoLicense=creativeCommon&maxResults=5&key=$YOUTUBE_API_KEY" > temp.json
+            
+            # التحقق من وجود نتائج
+            if [ -s temp.json ]; then
+              # استخراج الفيديوهات وإضافتها للملف
+              jq -c '.items[] | {query: "'"$QUERY"'", videoId: .id.videoId, title: .snippet.title, channel: .snippet.channelTitle, publishedAt: .snippet.publishedAt, thumbnails: .snippet.thumbnails}' temp.json >> all_results.json
               
-            # إضافة فاصلة بين العناصر (باستثناء آخر عنصر)
-            echo "," >> videos_list.json
+              # عد النتائج
+              COUNT=$(jq '.items | length' temp.json)
+              TOTAL=$((TOTAL + COUNT))
+              echo "  ✅ تم جلب $COUNT فيديو"
+            else
+              echo "  ⚠️ لا توجد نتائج"
+            fi
+            
+            rm -f temp.json
           done
           
           # بداية ملف JSON
           echo '{"videos": [' > data/videos.json
           
-          # إزالة آخر فاصلة من الملف المؤقت
-          sed '$ s/,$//' videos_list.json >> data/videos.json
+          # إضافة النتائج مع فواصل صحيحة
+          if [ -s all_results.json ]; then
+            # قراءة أول سطر
+            first_line=$(head -1 all_results.json)
+            echo "  $first_line" >> data/videos.json
+            
+            # باقي الأسطر مع إضافة فاصلة قبل كل سطر
+            tail -n +2 all_results.json | while read line; do
+              if [ -n "$line" ]; then
+                echo "  ,$line" >> data/videos.json
+              fi
+            done
+          fi
           
           # نهاية ملف JSON
           echo ']}' >> data/videos.json
           
-          # تنظيف الملفات المؤقتة
-          rm -f videos_list.json
+          # تنظيف
+          rm -f all_results.json
           
-          # عرض النتيجة
+          # التحقق من النتيجة
           if [ -f data/videos.json ]; then
-            COUNT=$(jq '.videos | length' data/videos.json)
-            echo "✅ تم جلب $COUNT فيديو إجمالاً"
+            FINAL_COUNT=$(jq '.videos | length' data/videos.json 2>/dev/null || echo "0")
+            echo "========================================"
+            echo "🔥 تم جلب $FINAL_COUNT فيديو إجمالاً"
+            echo "📊 من $TOTAL كلمة بحث في أعلى المجالات طلباً 2026"
+            echo "========================================"
           else
             echo "❌ فشل إنشاء ملف الفيديوهات"
             exit 1
@@ -73,5 +166,12 @@ jobs:
           git config --global user.email 'actions@github.com'
           git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
           git add data/videos.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "🔄 تحديث تلقائي لقائمة فيديوهات CC - $(date)"
-          git push
+          
+          # التحقق من وجود تغييرات
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "لا توجد تغييرات جديدة"
+          else
+            git commit -m "🔄 تحديث تلقائي لقائمة الفيديوهات - $(date)"
+            git push
+            echo "✅ تم تحديث الملف بنجاح"
+          fi
