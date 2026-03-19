@@ -12,54 +12,48 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
-      
+
+      - name: تثبيت yt-dlp
+        run: |
+          sudo apt update
+          sudo apt install -y yt-dlp jq
+
       - name: إنشاء مجلد البيانات
         run: mkdir -p data
-      
-      - name: جلب الفيديوهات
+
+      - name: جلب آخر 10 فيديوهات من القناة
         run: |
-          echo "جلب الفيديوهات من قناة Mosh..."
-          
-          # جلب RSS
-          curl -s "https://www.youtube.com/feeds/videos.xml?channel_id=UCWv7vMbMWH4-V0ZXdmDpPBA" > feed.xml
-          
-          # استخراج ids
-          grep -oP '(?<=<yt:videoId>).*?(?=</yt:videoId>)' feed.xml > ids.txt
-          
-          # بداية ملف JSON
-          echo '{"videos": [' > data/videos.json
-          
-          # قراءة ids وبناء JSON
-          while read id; do
-            if [ ! -z "$id" ]; then
-              cat >> data/videos.json <<EOF
-              {
-                "videoId": "$id",
-                "title": "فيديو من قناة Mosh",
-                "channel": "Programming with Mosh",
-                "thumbnails": {
-                  "medium": {
-                    "url": "https://i.ytimg.com/vi/$id/mqdefault.jpg"
-                  }
-                }
-              },
-EOF
-            fi
-          done < ids.txt
-          
-          # إزالة آخر فاصلة
-          sed -i '$ s/,$//' data/videos.json
-          echo ']}' >> data/videos.json
-          
-          # تنظيف
-          rm -f feed.xml ids.txt
-          
-          echo "✅ تم جلب الفيديوهات"
-      
+          # استخدام yt-dlp لجلب البيانات
+          yt-dlp -j --playlist-end 10 "https://www.youtube.com/@programmingwithmosh" > videos.json
+
+          # تحويل البيانات لصيغة موقعك
+          echo '{"videos": []}' > data/videos.json
+
+          # قراءة كل فيديو وبناء JSON
+          cat videos.json | while read line; do
+            video_id=$(echo $line | jq -r '.id')
+            title=$(echo $line | jq -r '.title')
+            
+            # إضافة للـ JSON
+            jq --arg id "$video_id" --arg title "$title" \
+               '.videos += [{
+                 "videoId": $id,
+                 "title": $title,
+                 "channel": "Programming with Mosh",
+                 "thumbnails": {
+                   "medium": {
+                     "url": "https://i.ytimg.com/vi/\($id)/mqdefault.jpg"
+                   }
+                 }
+               }]' data/videos.json > temp.json && mv temp.json data/videos.json
+          done
+
+          echo "✅ تم جلب $(jq '.videos | length' data/videos.json) فيديو"
+
       - name: حفظ التغييرات
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
           git add data/videos.json
-          git commit -m "تحديث الفيديوهات" || echo "لا تغييرات"
+          git commit -m "تحديث الفيديوهات $(date)" || echo "لا تغييرات"
           git push
