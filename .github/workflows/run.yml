@@ -17,17 +17,45 @@ jobs:
       
       - run: mkdir -p data
       
-      - run: curl -s "https://www.youtube.com/feeds/videos.xml?channel_id=UCWv7vMbMWH4-V0ZXdmDpPBA" > feed.xml
-      
-      - run: |
-          echo '{"videos": []}' > data/videos.json
-          grep -oP '(?<=<yt:videoId>).*?(?=</yt:videoId>)' feed.xml | while read id; do
-            echo "{\"videoId\":\"$id\",\"title\":\"Video $id\",\"channel\":\"Mosh\"}" >> data/videos.json
+      - name: جلب RSS وتحويله لـ JSON
+        run: |
+          # جلب الـ RSS
+          curl -s "https://www.youtube.com/feeds/videos.xml?channel_id=UCWv7vMbMWH4-V0ZXdmDpPBA" > feed.xml
+          
+          # استخراج ids والعناوين
+          grep -oP '(?<=<yt:videoId>).*?(?=</yt:videoId>)' feed.xml > ids.txt
+          grep -oP '(?<=<title>).*?(?=</title>)' feed.xml | tail -n +2 > titles.txt
+          
+          # بدء بناء ملف JSON
+          echo '{"videos": [' > data/videos.json
+          
+          # دمج ids مع العناوين
+          paste ids.txt titles.txt | while read id title; do
+            cat >> data/videos.json <<EOF
+            {
+              "videoId": "$id",
+              "title": "$title",
+              "channel": "Programming with Mosh",
+              "thumbnails": {
+                "medium": {
+                  "url": "https://i.ytimg.com/vi/$id/mqdefault.jpg"
+                }
+              }
+            },
+EOF
           done
+          
+          # إزالة آخر فاصلة وإغلاق JSON
+          sed -i '$ s/,$//' data/videos.json
+          echo ']}' >> data/videos.json
+          
+          # تنظيف
+          rm -f feed.xml ids.txt titles.txt
       
-      - run: |
+      - name: حفظ التغييرات
+        run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
           git add data/videos.json
-          git commit -m "update" || exit 0
+          git diff --quiet && git diff --staged --quiet || git commit -m "تحديث الفيديوهات $(date)"
           git push
