@@ -1,12 +1,12 @@
-name: جلب فيديوهات Python (freeCodeCamp)
+name: جلب 500 فيديو من قنوات متعددة (أعلى الكلمات طلباً 2026)
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */6 * * *' # يتحدث كل 6 ساعات
+    - cron: '0 */12 * * *' # يتحدث كل 12 ساعة
 
 jobs:
-  fetch-python:
+  fetch-500-videos:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -21,39 +21,77 @@ jobs:
           sudo apt install -y python3-pip jq
           pip install yt-dlp
 
-      - name: جلب آخر 50 فيديو Python من freeCodeCamp
+      - name: جلب 500 فيديو مستهدف بأعلى الكلمات طلباً
         run: |
           mkdir -p data
-          # جلب الفيديوهات من قناة freeCodeCamp (غنية بدروس Python)
-          yt-dlp --flat-playlist --dump-json --playlist-end 50 "https://www.youtube.com/@freecodecamp" 2>/dev/null | jq -s '.' > raw.json
+          
+          # قائمة الكلمات المفتاحية الأكثر بحثاً (من الجدول أعلاه)
+          KEYWORDS=(
+            "AI tools 2026"
+            "learn Python programming from scratch"
+            "how to make money online 2026"
+            "web development full course"
+            "ChatGPT tutorial"
+            "best side hustles 2026"
+            "investing for beginners"
+            "youtube seo 2026"
+            "how to save money on a low income"
+            "data science for beginners"
+            "home workout no equipment"
+            "how to grow on youtube in 2026"
+            "air fryer recipes for beginners"
+            "machine learning for beginners"
+            "best free online courses 2026"
+          )
 
-          # فلترة الفيديوهات التي تحتوي على "Python" في عنوانها (لضمان الدقة)
+          # ملف مؤقت لجمع كل الفيديوهات
+          echo '[]' > all_videos.json
+
+          # حلقة تكرار للبحث عن كل كلمة مفتاحية وجلب 30 فيديو لكل منها
+          for KEYWORD in "${KEYWORDS[@]}"; do
+            echo "🔍 جاري البحث عن: $KEYWORD"
+            
+            # استدعاء yt-dlp لجلب بيانات الفيديو
+            yt-dlp "ytsearch30:$KEYWORD" --dump-json --flat-playlist 2>/dev/null | jq -c '.' >> temp_raw.json
+            echo "" >> temp_raw.json
+          done
+
+          # تحويل البيانات إلى صيغة JSON صحيحة
+          jq -s '.' temp_raw.json > temp.json
+          
+          # بناء الملف النهائي بالصيغة المطلوبة لموقعك
           jq '
-            [
-              .[] | select(.title | contains("Python"))
-            ] | {
+            {
               videos: [
-                .[] | {
+                .[][] | {
                   videoId: .id,
                   title: .title,
-                  channel: "freeCodeCamp",
+                  channel: (.channel // "قناة تعليمية"),
                   thumbnails: {
                     medium: {
-                      url: "https://i.ytimg.com/vi/\(.id)/mqdefault.jpg"
+                      url: ("https://i.ytimg.com/vi/\(.id)/mqdefault.jpg")
                     }
                   }
                 }
-              ]
+              ] | unique_by(.videoId) | .[0:500]  # إزالة التكرارات وأخذ أول 500
             }
-          ' raw.json > data/videos.json
-
-          rm raw.json
-          echo "✅ تم جلب $(jq '.videos | length' data/videos.json) فيديو عن Python"
+          ' temp.json > data/videos.json
+          
+          # تنظيف الملفات المؤقتة
+          rm -f temp_raw.json temp.json
+          
+          # عد الفيديوهات وعرض النتيجة
+          COUNT=$(jq '.videos | length' data/videos.json)
+          echo "✅ تم جلب ${COUNT} فيديو فريد من أعلى الكلمات طلباً في 2026"
+          
+          # عرض مثال على أول 3 فيديوهات
+          echo "📺 أمثلة على الفيديوهات المجلوبة:"
+          jq '.videos[0:3]' data/videos.json
 
       - name: حفظ التغييرات
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
           git add data/videos.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "تحديث فيديوهات Python $(date)"
+          git diff --quiet && git diff --staged --quiet || git commit -m "🔥 تحديث تلقائي لـ500 فيديو مطلوب $(date)"
           git push
