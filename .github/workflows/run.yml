@@ -1,10 +1,33 @@
-name: اختبار
+name: جلب فيديوهات Mosh
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
 
 jobs:
-  test:
+  fetch:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - run: echo "السلام عليكم"
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+      
+      - run: mkdir -p data
+      
+      - run: curl -s "https://www.youtube.com/feeds/videos.xml?channel_id=UCWv7vMbMWH4-V0ZXdmDpPBA" > feed.xml
+      
+      - run: |
+          echo '{"videos": []}' > data/videos.json
+          grep -oP '(?<=<yt:videoId>).*?(?=</yt:videoId>)' feed.xml | while read id; do
+            echo "{\"videoId\":\"$id\",\"title\":\"Video $id\",\"channel\":\"Mosh\"}" >> data/videos.json
+          done
+      
+      - run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add data/videos.json
+          git commit -m "update" || exit 0
+          git push
