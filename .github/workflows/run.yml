@@ -1,4 +1,4 @@
-name: جلب فيديوهات Mosh
+name: جلب فيديوهات RSS
 
 on:
   workflow_dispatch:
@@ -13,29 +13,24 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
 
-      - name: تثبيت yt-dlp
+      - name: جلب RSS وتخزينه
         run: |
-          sudo apt update
-          sudo apt install -y yt-dlp jq
+          mkdir -p data
+          curl -s "https://www.youtube.com/feeds/videos.xml?channel_id=UCWv7vMbMWH4-V0ZXdmDpPBA" > feed.xml
 
-      - name: إنشاء مجلد البيانات
-        run: mkdir -p data
-
-      - name: جلب آخر 10 فيديوهات من القناة
+      - name: تحويل RSS إلى JSON (بدون تعقيد)
         run: |
-          # استخدام yt-dlp لجلب البيانات
-          yt-dlp -j --playlist-end 10 "https://www.youtube.com/@programmingwithmosh" > videos.json
-
-          # تحويل البيانات لصيغة موقعك
+          # بدء ملف JSON
           echo '{"videos": []}' > data/videos.json
 
-          # قراءة كل فيديو وبناء JSON
-          cat videos.json | while read line; do
-            video_id=$(echo $line | jq -r '.id')
-            title=$(echo $line | jq -r '.title')
-            
-            # إضافة للـ JSON
-            jq --arg id "$video_id" --arg title "$title" \
+          # استخراج الـ videoId والعنوان باستخدام grep بسيط
+          grep -oP '(?<=<yt:videoId>).*?(?=</yt:videoId>)' feed.xml > ids.txt
+          grep -oP '(?<=<title>).*?(?=</title>)' feed.xml | tail -n +2 > titles.txt
+
+          # دمج الملفين
+          paste ids.txt titles.txt | while read id title; do
+            # إضافة الفيديو إلى JSON
+            jq --arg id "$id" --arg title "$title" \
                '.videos += [{
                  "videoId": $id,
                  "title": $title,
@@ -48,7 +43,7 @@ jobs:
                }]' data/videos.json > temp.json && mv temp.json data/videos.json
           done
 
-          echo "✅ تم جلب $(jq '.videos | length' data/videos.json) فيديو"
+          echo "تم جلب $(jq '.videos | length' data/videos.json) فيديو"
 
       - name: حفظ التغييرات
         run: |
