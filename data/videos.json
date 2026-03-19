@@ -11,6 +11,174 @@
       "title": "Python for Beginners - Learn Python in 1 Hour",
       "channel": "Programming with Mosh",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/N4mEzFDjqtA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "8DvywoWv6fI",
+      "title": "JavaScript Tutorial for Beginners",
+      "channel": "Programming with Mosh",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/8DvywoWv6fI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "PkZNo7MFNFg",
+      "title": "Learn JavaScript - Full Course for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/PkZNo7MFNFg/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Ke90Tje7VS0",
+      "title": "React JS Tutorial for Beginners",
+      "channel": "Programming with Mosh",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Ke90Tje7VS0/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "DLX62G4lc44",
+      "title": "React Course - Beginner's Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/DLX62G4lc44/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "SqcY0GlETPk",
+      "title": "Data Structures and Algorithms in Python",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/SqcY0GlETPk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "pdy3nh1tn6I",
+      "title": "Python OOP Tutorial",
+      "channel": "Corey Schafer",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/pdy3nh1tn6I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "t8pPdKYpowI",
+      "title": "Python Django Tutorial",
+      "channel": "Corey Schafer",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/t8pPdKYpowI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "rHux0gMZ3Eg",
+      "title": "Python Pandas Tutorial",
+      "channel": "Corey Schafer",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/rHux0gMZ3Eg/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Z1RJmh_OqeA",
+      "title": "Python Flask Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Z1RJmh_OqeA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "jBzwzrDvZ18",
+      "title": "Python for Data Science",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/jBzwzrDvZ18/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "hKR-jYvv3kU",
+      "title": "Python Automation Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/hKR-jYvv3kU/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "LHBE6Q9XlzI",
+      "title": "Python Machine Learning Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/LHBE6Q9XlzI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "f79MRyMsjrQ",
+      "title": "Python GUI Tutorial",
+      "channel": "The New Boston",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/f79MRyMsjrQ/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "YXPyB4XeYLA",
+      "title": "Python Tkinter Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/YXPyB4XeYLA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "3Xc3CA650YI",
+      "title": "Python Selenium Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/3Xc3CA650YI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "J8LdW6P-HkU",
+      "title": "Python API Tutorial",
+      "channel": "Tech With Tim",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/J8LdW6P-HkU/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "N4mEzFDjqtA",
+      "title": "Python Web Scraping Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/N4mEzFDjqtA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "sDqcLl1R7RI",
+      "title": "Python Testing Tutorial",
+      "channel": "Corey Schafer",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/sDqcLl1R7RI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "M2qM5xjr_5E",
+      "title": "Python Design Patterns Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/M2qM5xjr_5E/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Wz3BiwGpFkA",
+      "title": "Python Multithreading Tutorial",
+      "channel": "Corey Schafer",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Wz3BiwGpFkA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "FJd1oYJkG5s",
+      "title": "Python Networking Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/FJd1oYJkG5s/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "uuhzaRTzF5M",
+      "title": "Python Regex Tutorial",
+      "channel": "Corey Schafer",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/uuhzaRTzF5M/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "tKTZoB2Vjuk",
+      "title": "Python Logging Tutorial",
+      "channel": "Corey Schafer",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/tKTZoB2Vjuk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "XQgXKtPSzUI",
+      "title": "Python Virtual Environment Tutorial",
+      "channel": "Corey Schafer",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/XQgXKtPSzUI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "bPrmA1SEN2k",
+      "title": "Python JSON Tutorial",
+      "channel": "Corey Schafer",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/bPrmA1SEN2k/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "z8l5GQ3qJ0E",
+      "title": "Python CSV Tutorial",
+      "channel": "Corey Schafer",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/z8l5GQ3qJ0E/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "eirjjyP2qcQ",
+      "title": "Python SQLite Tutorial",
+      "channel": "Corey Schafer",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/eirjjyP2qcQ/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "D2a5fH4h2I4",
+      "title": "Python MongoDB Tutorial",
+      "channel": "Tech With Tim",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/D2a5fH4h2I4/mqdefault.jpg" } }
     }
   ]
 }
