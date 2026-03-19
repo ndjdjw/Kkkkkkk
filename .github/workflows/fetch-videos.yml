@@ -27,13 +27,10 @@ jobs:
           
           echo "🔍 جلب آخر فيديوهات Programming with Mosh..."
           
-          # جلب RSS وحفظه
+          # جلب RSS
           curl -s "$RSS_URL" > feed.xml
           
-          # تحويل XML لـ JSON
-          echo '{"videos": []}' > data/videos.json
-          
-          # استخدام grep و sed لاستخراج البيانات
+          # استخراج البيانات
           grep -oP '(?<=<yt:videoId>).*?(?=</yt:videoId>)' feed.xml > ids.txt
           grep -oP '(?<=<title>).*?(?=</title>)' feed.xml | tail -n +2 > titles.txt
           grep -oP '(?<=<published>).*?(?=</published>)' feed.xml > dates.txt
@@ -57,14 +54,14 @@ jobs:
 EOF
           done
           
-          # إزالة آخر فاصلة وإغلاق JSON
+          # إزالة آخر فاصلة
           sed -i '$ s/,$//' data/videos.json
           echo ']}' >> data/videos.json
           
           # تنظيف
           rm -f feed.xml ids.txt titles.txt dates.txt
           
-          # عد الفيديوهات
+          # عرض النتيجة
           COUNT=$(jq '.videos | length' data/videos.json)
           echo "✅ تم جلب $COUNT فيديو"
           echo "📺 أول فيديو: $(jq -r '.videos[0].title' data/videos.json)"
