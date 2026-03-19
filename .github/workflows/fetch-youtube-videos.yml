@@ -1,34 +1,68 @@
-name: Fetch YouTube Videos
+name: جلب فيديوهات يوتيوب (المشاع الإبداعي)
 
+# متى يشتغل هذا الملف؟
 on:
-  workflow_dispatch:  # يشتغل يدوياً
+  workflow_dispatch:      # يمكنك تشغيله يدوياً من تبويب Actions
   schedule:
-    - cron: '0 */6 * * *'  # كل 6 ساعات
+    - cron: '0 */6 * * *' # يشتغل تلقائياً كل 6 ساعات
 
 jobs:
-  fetch-and-update:
+  fetch-and-save:
+    name: جلب الفيديوهات وحفظها
     runs-on: ubuntu-latest
+
+    # صلاحية الكتابة في المستودع
+    permissions:
+      contents: write
+
     steps:
-      - name: Checkout repository
+      - name: استيراد المستودع
         uses: actions/checkout@v3
-      
-      - name: Fetch videos from YouTube
+        with:
+          token: ${{ secrets.GH_TOKEN }}   # <-- يستخدم التوكن السري
+
+      - name: جلب الفيديوهات من يوتيوب
         env:
-          API_KEY: ${{ secrets.YOUTUBE_API_KEY }}  # 🔥 هنا يسحب المفتاح السري
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }} # <-- يستخدم مفتاح API السري
         run: |
-          # إنشاء مجلد البيانات
-          mkdir -p data
-          
-          # البحث عن فيديوهات CC
-          curl -s "https://www.googleapis.com/youtube/v3/search?part=snippet&q=تفسير+قرآن&type=video&videoLicense=creativeCommon&maxResults=20&key=$API_KEY" > data/videos.json
-          
-          # عرض رسالة نجاح
-          echo "✅ تم تحديث الفيديوهات في $(date)"
-      
-      - name: Commit and push if changes
+          # قائمة كلمات البحث (عدلها كما تحب)
+          QUERIES=("تفسير قرآن" "حديث نبوي" "فقه إسلامي" "عقيدة إسلامية" "سيرة نبوية")
+
+          # ملف مؤقت لتجميع النتائج
+          echo '[]' > all_videos.json
+
+          # حلقة تكرار للبحث عن كل كلمة
+          for QUERY in "${QUERIES[@]}"; do
+            echo "🔍 البحث عن: $QUERY"
+
+            # استدعاء YouTube API
+            curl -s "https://www.googleapis.com/youtube/v3/search?part=snippet&q=$QUERY&type=video&videoLicense=creativeCommon&maxResults=10&key=$YOUTUBE_API_KEY" \
+              | jq '.items[] | {query: "'"$QUERY"'", videoId: .id.videoId, title: .snippet.title, channel: .snippet.channelTitle, publishedAt: .snippet.publishedAt, thumbnails: .snippet.thumbnails}' \
+              >> videos_list.json
+          done
+
+          # تجميع كل الفيديوهات في ملف JSON واحد منظم
+          echo '{"videos": [' > data/videos.json
+          # نأخذ الملف المؤقت ونحذف آخر فاصلة ونضيفه للملف الرئيسي
+          sed -e ':a' -e 'N' -e '$!ba' -e 's/}\n{/},{/g' videos_list.json >> data/videos.json
+          echo ']}' >> data/videos.json
+
+          # حذف الملفات المؤقتة
+          rm -f videos_list.json
+
+          # عد الفيديوهات وإظهارها في التقرير
+          COUNT=$(jq '.videos | length' data/videos.json)
+          echo "✅ تم جلب $COUNT فيديو إجمالاً"
+
+      - name: حفظ التغييرات في المستودع
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
-          git add data/
-          git diff --quiet && git diff --staged --quiet || git commit -m "تحديث تلقائي للفيديوهات"
+          # استخدام التوكن لتنفيذ عملية الدفع
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
+          git add data/videos.json
+          # التأكد من وجود تغييرات قبل عمل commit
+          git diff --quiet && git diff --staged --quiet || git commit -m "🔄 تحديث تلقائي لقائمة فيديوهات CC - $(date)"
           git push
