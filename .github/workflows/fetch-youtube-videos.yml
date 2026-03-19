@@ -1,4 +1,4 @@
-name: جلب فيديوهات يوتيوب (المشاع الإبداعي)
+name: جلب فيديوهات يوتيوب
 
 on:
   workflow_dispatch:
@@ -6,98 +6,44 @@ on:
     - cron: '0 */6 * * *'
 
 jobs:
-  fetch-and-save:
-    name: جلب الفيديوهات وحفظها
+  fetch-videos:
     runs-on: ubuntu-latest
-    
     permissions:
       contents: write
-
+    
     steps:
       - name: استيراد المستودع
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
-
+      
       - name: إنشاء مجلد البيانات
         run: mkdir -p data
-
-      - name: جلب الفيديوهات من يوتيوب
+      
+      - name: جلب فيديوهات اختبارية
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: |
-          # كلمات البحث الأكثر طلباً 2026
-          QUERIES=(
-            "Python programming tutorial"
-            "Machine learning course"
-            "Data science for beginners"
-            "Web development full course"
-            "Digital marketing guide"
-            "Artificial intelligence basics"
-            "JavaScript tutorial"
-            "React js course"
-            "Cybersecurity for beginners"
-            "Excel tutorial advanced"
-          )
+          # كلمة بحث واحدة بسيطة للتجربة
+          QUERY="Python programming"
           
-          # ملف مؤقت
-          > all_results.json
+          echo "🔍 جلب فيديوهات عن: $QUERY"
           
-          for QUERY in "${QUERIES[@]}"; do
-            echo "🔍 البحث عن: $QUERY"
-            
-            # استدعاء API
-            curl -s "https://www.googleapis.com/youtube/v3/search?part=snippet&q=$QUERY&type=video&videoLicense=creativeCommon&maxResults=5&key=$YOUTUBE_API_KEY" > temp.json
-            
-            # التحقق من وجود نتائج
-            if [ -s temp.json ]; then
-              jq -c '.items[] | {
-                query: "'"$QUERY"'",
-                videoId: .id.videoId,
-                title: .snippet.title,
-                description: .snippet.description,
-                channel: .snippet.channelTitle,
-                publishedAt: .snippet.publishedAt,
-                thumbnails: .snippet.thumbnails
-              }' temp.json >> all_results.json
-              echo "  ✅ تمت الإضافة"
-            else
-              echo "  ⚠️ لا توجد نتائج"
-            fi
-            
-            rm -f temp.json
-          done
+          # استدعاء API مع عرض التفاصيل
+          curl -v "https://www.googleapis.com/youtube/v3/search?part=snippet&q=$QUERY&type=video&videoLicense=creativeCommon&maxResults=5&key=$YOUTUBE_API_KEY" > response.json 2>&1
           
-          # بناء ملف JSON النهائي
-          echo '{"videos": [' > data/videos.json
+          # عرض الرد
+          cat response.json
           
-          if [ -s all_results.json ]; then
-            # إضافة النتائج مع فواصل
-            sed -e '1h;1d;$!H;$!d;g' -e 's/}\n{/},{/g' all_results.json >> data/videos.json
-          fi
+          # حفظ النتائج
+          echo '{"videos": []}' > data/videos.json
           
-          echo ']}' >> data/videos.json
-          
-          # تنظيف
-          rm -f all_results.json
-          
-          # عرض النتيجة
-          COUNT=$(jq '.videos | length' data/videos.json)
-          echo "✅ تم جلب $COUNT فيديو إجمالاً"
-
-      - name: حفظ التغييرات
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          echo "✅ تم"
+      
+      - name: رفع الملفات
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
           git add data/videos.json
-          
-          if git diff --quiet && git diff --staged --quiet; then
-            echo "لا توجد تغييرات"
-          else
-            git commit -m "🔄 تحديث الفيديوهات - $(date)"
-            git push
-            echo "✅ تم التحديث"
-          fi
+          git commit -m "تحديث" || echo "لا تغييرات"
+          git push
