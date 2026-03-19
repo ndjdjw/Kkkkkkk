@@ -1,4 +1,4 @@
-name: جلب فيديوهات Python من freeCodeCamp
+name: جلب فيديوهات Python
 
 on:
   workflow_dispatch:
@@ -12,36 +12,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
-      - name: تثبيت yt-dlp
-        run: |
-          sudo apt update
-          sudo apt install -y python3-pip
-          pip install yt-dlp
-      - name: جلب 100 فيديو Python
-        run: |
+      - run: |
+          sudo apt update && sudo apt install -y python3-pip && pip install yt-dlp
           mkdir -p data
-          yt-dlp --flat-playlist --dump-json --playlist-end 100 "https://www.youtube.com/@freecodecamp" 2>/dev/null | jq -s '.' > raw.json
-          jq '
-            {
-              videos: [
-                .[] | {
-                  videoId: .id,
-                  title: .title,
-                  channel: "freeCodeCamp",
-                  thumbnails: {
-                    medium: {
-                      url: "https://i.ytimg.com/vi/\(.id)/mqdefault.jpg"
-                    }
-                  }
-                }
-              ]
-            }
-          ' raw.json > data/videos.json
-          rm raw.json
-      - name: حفظ التغييرات
-        run: |
+          yt-dlp --flat-playlist --dump-json --playlist-end 50 "https://www.youtube.com/@freecodecamp" 2>/dev/null | jq -s '.' > raw.json
+          jq '{videos: [.[] | {videoId: .id, title: .title, channel: "freeCodeCamp", thumbnails: {medium: {url: ("https://i.ytimg.com/vi/\(.id)/mqdefault.jpg")}}}]}' raw.json > data/videos.json
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
-          git add data/videos.json
-          git commit -m "تحديث من freeCodeCamp" || exit 0
-          git push
+          git add data/videos.json && git commit -m "update" && git push || echo "no changes"
