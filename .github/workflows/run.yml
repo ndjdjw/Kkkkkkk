@@ -1,4 +1,4 @@
-name: جلب فيديوهات يوتيوب (بدون مفتاح)
+name: جلب فيديوهات Mosh
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
     - cron: '0 */6 * * *'
 
 jobs:
-  fetch-videos:
+  fetch:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -15,67 +15,53 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
 
-      - name: إعداد Python وتثبيت الأدوات
-        run: |
-          sudo apt update
-          sudo apt install -y python3-pip
-          pip install yt-dlp
-          mkdir -p data
+      - name: إنشاء مجلد البيانات
+        run: mkdir -p data
 
       - name: جلب آخر فيديوهات القناة
         run: |
-          CHANNEL_URL="https://www.youtube.com/@programmingwithmosh"
+          # رابط RSS الرسمي للقناة
+          RSS_URL="https://www.youtube.com/feeds/videos.xml?channel_id=UCWv7vMbMWH4-V0ZXdmDpPBA"
           
-          # استخدام yt-dlp مع خيارات تجنب الحظر
-          yt-dlp \
-            --ignore-errors \
-            --no-warnings \
-            --extractor-args "youtube:player-client=android" \
-            --flat-playlist \
-            --dump-json \
-            --playlist-end 15 \
-            "$CHANNEL_URL" 2>/dev/null | jq -s '.' > raw.json
-
-          # إذا فشل السابق، جرب طريقة بديلة
-          if [ ! -s raw.json ]; then
-            yt-dlp \
-              --ignore-errors \
-              --no-warnings \
-              --extractor-args "youtube:player-client=web" \
-              --flat-playlist \
-              --dump-json \
-              --playlist-end 15 \
-              "$CHANNEL_URL" 2>/dev/null | jq -s '.' > raw.json
-          fi
-
-          # تحويل البيانات إلى الصيغة المطلوبة
-          jq '
-            {
-              videos: [
-                .[] | {
-                  videoId: .id,
-                  title: .title,
-                  channel: "Programming with Mosh",
-                  thumbnails: {
-                    medium: {
-                      url: "https://i.ytimg.com/vi/\(.id)/mqdefault.jpg"
+          # تحميل RSS
+          curl -s "$RSS_URL" > feed.xml
+          
+          # استخراج العناوين والروابط
+          grep -oP '(?<=<title>).*?(?=</title>)' feed.xml | tail -n +2 > titles.txt
+          grep -oP '(?<=<yt:videoId>).*?(?=</yt:videoId>)' feed.xml > ids.txt
+          
+          # بدء ملف JSON
+          echo '{"videos": []}' > data/videos.json
+          
+          # التأكد من وجود نتائج
+          if [ -s ids.txt ]; then
+            # قراءة كل سطر
+            paste ids.txt titles.txt | while read id title; do
+              # إضافة الفيديو إلى JSON
+              jq --arg id "$id" --arg title "$title" \
+                '.videos += [{
+                  "videoId": $id,
+                  "title": $title,
+                  "channel": "Programming with Mosh",
+                  "thumbnails": {
+                    "medium": {
+                      "url": "https://i.ytimg.com/vi/\($id)/mqdefault.jpg"
                     }
                   }
-                }
-              ]
-            }
-          ' raw.json > data/videos.json
-
+                }]' data/videos.json > temp.json && mv temp.json data/videos.json
+            done
+            echo "✅ تم جلب $(jq '.videos | length' data/videos.json) فيديو"
+          else
+            echo "⚠️ لم يتم العثور على فيديوهات، تحقق من القناة"
+          fi
+          
           # تنظيف
-          rm -f raw.json
+          rm -f feed.xml ids.txt titles.txt
 
       - name: حفظ التغييرات
         run: |
-          COUNT=$(jq '.videos | length' data/videos.json)
-          echo "✅ تم جلب $COUNT فيديو"
-
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
           git add data/videos.json
           git diff --quiet && git diff --staged --quiet || git commit -m "تحديث الفيديوهات $(date)"
           git push
