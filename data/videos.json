@@ -1,14 +1,1 @@
-{
-  "videos": [
-    {
-      "videoId": "K5KVEU3aaeQ",
-      "title": "Python Full Course for Beginners",
-      "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/K5KVEU3aaeQ/mqdefault.jpg"
-        }
-      }
-    }
-  ]
-}
+{"videos": []}
