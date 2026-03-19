@@ -1,0 +1,17 @@
+name: جلب فيديوهات Mosh
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+      - run: mkdir -p data
+      - run: curl -s "https://www.youtube.com/feeds/videos.xml?channel_id=UCWv7vMbMWH4-V0ZXdmDpPBA" | grep -oP '(?<=<yt:videoId>).*?(?=</yt:videoId>)' | head -5 > ids.txt
+      - run: echo '{"videos": []}' > data/videos.json
