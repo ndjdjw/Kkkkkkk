@@ -1,75 +1,16 @@
 name: جلب فيديوهات من قناة Mosh
-
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */6 * * *'
-
 jobs:
-  fetch-rss:
+  fetch:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
     steps:
-      - name: استيراد المستودع
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
-      
-      - name: إنشاء مجلد البيانات
-        run: mkdir -p data
-      
-      - name: جلب الفيديوهات من RSS
-        run: |
-          # رابط RSS لقناة Mosh
-          RSS_URL="https://www.youtube.com/feeds/videos.xml?channel_id=UCWv7vMbMWH4-V0ZXdmDpPBA"
-          
-          echo "🔍 جلب آخر فيديوهات Programming with Mosh..."
-          
-          # جلب RSS
-          curl -s "$RSS_URL" > feed.xml
-          
-          # استخراج البيانات
-          grep -oP '(?<=<yt:videoId>).*?(?=</yt:videoId>)' feed.xml > ids.txt
-          grep -oP '(?<=<title>).*?(?=</title>)' feed.xml | tail -n +2 > titles.txt
-          grep -oP '(?<=<published>).*?(?=</published>)' feed.xml > dates.txt
-          
-          # بناء JSON
-          echo '{"videos": [' > data/videos.json
-          
-          paste ids.txt titles.txt dates.txt | while read id title date; do
-            cat >> data/videos.json << EOF
-            {
-              "videoId": "$id",
-              "title": "$title",
-              "channel": "Programming with Mosh",
-              "publishedAt": "$date",
-              "thumbnails": {
-                "medium": {
-                  "url": "https://i.ytimg.com/vi/$id/mqdefault.jpg"
-                }
-              }
-            },
-EOF
-          done
-          
-          # إزالة آخر فاصلة
-          sed -i '$ s/,$//' data/videos.json
-          echo ']}' >> data/videos.json
-          
-          # تنظيف
-          rm -f feed.xml ids.txt titles.txt dates.txt
-          
-          # عرض النتيجة
-          COUNT=$(jq '.videos | length' data/videos.json)
-          echo "✅ تم جلب $COUNT فيديو"
-          echo "📺 أول فيديو: $(jq -r '.videos[0].title' data/videos.json)"
-      
-      - name: حفظ التغييرات
-        run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          git add data/videos.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "🔄 تحديث فيديوهات Mosh - $(date)"
-          git push
+      - run: mkdir -p data
+      - run: curl -s "https://www.youtube.com/feeds/videos.xml?channel_id=UCWv7vMbMWH4-V0ZXdmDpPBA" | grep -oP '(?<=<yt:videoId>).*?(?=</yt:videoId>)' | head -10 > ids.txt
+      - run: echo '{"videos":[]}' > data/videos.json
+      - run: git add data/videos.json && git commit -m "update" && git push || echo "no changes"
