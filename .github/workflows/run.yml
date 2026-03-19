@@ -1,12 +1,10 @@
-name: جلب جميع فيديوهات Mosh
+name: جلب فيديوهات Python من freeCodeCamp
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */6 * * *'
 
 jobs:
-  fetch-all:
+  fetch:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -14,28 +12,22 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
-
       - name: تثبيت yt-dlp
         run: |
           sudo apt update
           sudo apt install -y python3-pip
           pip install yt-dlp
-
-      - name: جلب جميع الفيديوهات من القناة
+      - name: جلب 100 فيديو Python
         run: |
           mkdir -p data
-          
-          # جلب كل الفيديوهات المتاحة (yt-dlp يجلب أكبر عدد ممكن)
-          yt-dlp --flat-playlist --dump-json --playlist-end 300 "https://www.youtube.com/@programmingwithmosh" 2>/dev/null | jq -s '.' > raw.json
-          
-          # تحويل البيانات إلى الصيغة المطلوبة
+          yt-dlp --flat-playlist --dump-json --playlist-end 100 "https://www.youtube.com/@freecodecamp" 2>/dev/null | jq -s '.' > raw.json
           jq '
             {
               videos: [
                 .[] | {
                   videoId: .id,
                   title: .title,
-                  channel: "Programming with Mosh",
+                  channel: "freeCodeCamp",
                   thumbnails: {
                     medium: {
                       url: "https://i.ytimg.com/vi/\(.id)/mqdefault.jpg"
@@ -45,18 +37,11 @@ jobs:
               ]
             }
           ' raw.json > data/videos.json
-          
-          # عد الفيديوهات
-          COUNT=$(jq '.videos | length' data/videos.json)
-          echo "✅ تم جلب $COUNT فيديو من القناة"
-          
-          # تنظيف
           rm raw.json
-
       - name: حفظ التغييرات
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
           git add data/videos.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "🔥 تحديث جميع الفيديوهات $(date)"
+          git commit -m "تحديث من freeCodeCamp" || exit 0
           git push
