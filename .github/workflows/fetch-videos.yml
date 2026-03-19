@@ -1,6 +1,10 @@
 name: جلب فيديوهات من قناة Mosh
+
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -10,7 +14,48 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
-      - run: mkdir -p data
-      - run: curl -s "https://www.youtube.com/feeds/videos.xml?channel_id=UCWv7vMbMWH4-V0ZXdmDpPBA" | grep -oP '(?<=<yt:videoId>).*?(?=</yt:videoId>)' | head -10 > ids.txt
-      - run: echo '{"videos":[]}' > data/videos.json
-      - run: git add data/videos.json && git commit -m "update" && git push || echo "no changes"
+      
+      - name: إنشاء مجلد البيانات
+        run: mkdir -p data
+      
+      - name: جلب الفيديوهات
+        run: |
+          # جلب RSS
+          curl -s "https://www.youtube.com/feeds/videos.xml?channel_id=UCWv7vMbMWH4-V0ZXdmDpPBA" > feed.xml
+          
+          # استخراج البيانات
+          grep -oP '(?<=<yt:videoId>).*?(?=</yt:videoId>)' feed.xml > ids.txt
+          grep -oP '(?<=<title>).*?(?=</title>)' feed.xml | tail -n +2 > titles.txt
+          
+          # بناء JSON
+          echo '{"videos": [' > data/videos.json
+          
+          paste ids.txt titles.txt | while read id title; do
+            cat >> data/videos.json << EOF
+            {
+              "videoId": "$id",
+              "title": "$title",
+              "channel": "Programming with Mosh",
+              "thumbnails": {
+                "medium": {
+                  "url": "https://i.ytimg.com/vi/$id/mqdefault.jpg"
+                }
+              }
+            },
+EOF
+          done
+          
+          # إزالة آخر فاصلة
+          sed -i '$ s/,$//' data/videos.json
+          echo ']}' >> data/videos.json
+          
+          # تنظيف
+          rm -f feed.xml ids.txt titles.txt
+      
+      - name: حفظ التغييرات
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add data/videos.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "🔄 تحديث الفيديوهات - $(date)"
+          git push
