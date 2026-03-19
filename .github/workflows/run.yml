@@ -1,10 +1,12 @@
-name: جلب فيديوهات Python
+name: جلب فيديوهات Python (freeCodeCamp)
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *' # يتحدث كل 6 ساعات
 
 jobs:
-  fetch:
+  fetch-python:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -12,11 +14,46 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
-      - run: |
-          sudo apt update && sudo apt install -y python3-pip && pip install yt-dlp
+
+      - name: إعداد الأدوات
+        run: |
+          sudo apt update
+          sudo apt install -y python3-pip jq
+          pip install yt-dlp
+
+      - name: جلب آخر 50 فيديو Python من freeCodeCamp
+        run: |
           mkdir -p data
+          # جلب الفيديوهات من قناة freeCodeCamp (غنية بدروس Python)
           yt-dlp --flat-playlist --dump-json --playlist-end 50 "https://www.youtube.com/@freecodecamp" 2>/dev/null | jq -s '.' > raw.json
-          jq '{videos: [.[] | {videoId: .id, title: .title, channel: "freeCodeCamp", thumbnails: {medium: {url: ("https://i.ytimg.com/vi/\(.id)/mqdefault.jpg")}}}]}' raw.json > data/videos.json
+
+          # فلترة الفيديوهات التي تحتوي على "Python" في عنوانها (لضمان الدقة)
+          jq '
+            [
+              .[] | select(.title | contains("Python"))
+            ] | {
+              videos: [
+                .[] | {
+                  videoId: .id,
+                  title: .title,
+                  channel: "freeCodeCamp",
+                  thumbnails: {
+                    medium: {
+                      url: "https://i.ytimg.com/vi/\(.id)/mqdefault.jpg"
+                    }
+                  }
+                }
+              ]
+            }
+          ' raw.json > data/videos.json
+
+          rm raw.json
+          echo "✅ تم جلب $(jq '.videos | length' data/videos.json) فيديو عن Python"
+
+      - name: حفظ التغييرات
+        run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
-          git add data/videos.json && git commit -m "update" && git push || echo "no changes"
+          git add data/videos.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "تحديث فيديوهات Python $(date)"
+          git push
