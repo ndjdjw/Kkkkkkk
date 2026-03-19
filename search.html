@@ -1,40 +1,447 @@
-async function searchVideos() {
-  const query = document.getElementById('searchInput').value.trim();
-
-  if (!query) {
-    alert('الرجاء إدخال كلمة البحث');
-    return;
-  }
-
-  // إظهار شاشة التحميل...
-  searchBtn.disabled = true;
-  searchBtn.textContent = 'جاري البحث...';
-  resultsGrid.innerHTML = `<div class="loading"><div class="spinner"></div><p>جاري البحث...</p></div>`;
-
-  try {
-    // اقرأ من الملف المحلي
-    const response = await fetch('/data/videos.json');
-    const data = await response.json();
-
-    // فلترة النتائج حسب عنوان الفيديو
-    const filteredVideos = data.videos.filter(video =>
-      video.title.toLowerCase().includes(query.toLowerCase())
-    );
-
-    // إذا ما في نتائج
-    if (filteredVideos.length === 0) {
-      resultsGrid.innerHTML = `<div class="no-results"><p>لا توجد نتائج لـ "${query}"</p></div>`;
-      return;
-    }
-
-    // عرض النتائج
-    displayResults({ items: filteredVideos });
-
-  } catch (error) {
-    console.error('خطأ في جلب الفيديوهات:', error);
-    resultsGrid.innerHTML = `<div class="error-message"><p>حدث خطأ في تحميل الفيديوهات.</p></div>`;
-  } finally {
-    searchBtn.disabled = false;
-    searchBtn.textContent = 'بحث';
-  }
-}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البحث في الدورات | منصة العلوم الشرعية</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Bootstrap (من القالب الأصلي) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e3c32 0%, #2a5a4a 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* الهيدر مثل الموقع الأصلي */
+        .site-header {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h2 {
+            color: #1e3c32;
+            margin: 0;
+        }
+        
+        .logo i {
+            color: #ffd966;
+            margin-left: 10px;
+        }
+        
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #1e3c32;
+            font-weight: bold;
+            border-bottom: 2px solid #ffd966;
+        }
+        
+        /* صندوق البحث */
+        .search-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .search-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .search-title h1 {
+            color: #1e3c32;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .search-title p {
+            color: #666;
+            font-size: 18px;
+        }
+        
+        .search-box {
+            display: flex;
+            gap: 10px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .search-box input {
+            flex: 1;
+            padding: 18px 25px;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-size: 18px;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: #1e3c32;
+        }
+        
+        .search-box button {
+            background: #1e3c32;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .search-box button:hover {
+            background: #2a5a4a;
+            transform: scale(1.02);
+        }
+        
+        .search-box button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        /* إحصائيات */
+        .stats-bar {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .results-count {
+            color: #1e3c32;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .cc-badge {
+            background: #ffd966;
+            color: #1e3c32;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+        
+        .cc-badge i {
+            margin-left: 8px;
+        }
+        
+        /* شبكة النتائج */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .video-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .video-thumb {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 3px solid #ffd966;
+        }
+        
+        .video-info {
+            padding: 20px;
+        }
+        
+        .video-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 52px;
+        }
+        
+        .video-channel {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .video-channel i {
+            color: #1e3c32;
+            margin-left: 5px;
+        }
+        
+        .video-date {
+            color: #999;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .watch-btn {
+            display: block;
+            background: #1e3c32;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .watch-btn:hover {
+            background: #2a5a4a;
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* حالات خاصة */
+        .loading {
+            text-align: center;
+            padding: 60px;
+            grid-column: 1/-1;
+        }
+        
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #1e3c32;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .no-results, .error-message {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            grid-column: 1/-1;
+        }
+        
+        .no-results i, .error-message i {
+            font-size: 48px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- الهيدر -->
+        <div class="site-header">
+            <div class="logo">
+                <h2><i class="fas fa-quran"></i> منصة العلوم الشرعية</h2>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="about.html">عن المنصة</a>
+                <a href="course.html">الدورات</a>
+                <a href="search.html" class="active">البحث</a>
+                <a href="contact.html">اتصل بنا</a>
+            </div>
+        </div>
+        
+        <!-- البحث -->
+        <div class="search-section">
+            <div class="search-title">
+                <h1>🔍 ابحث عن دورات تعليمية</h1>
+                <p>محتوى مرخص برخصة المشاع الإبداعي - استخدمه بحرية في مشروعك</p>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="مثال: Python programming, Machine learning, Web development..." onkeypress="if(event.key === 'Enter') searchVideos()">
+                <button onclick="searchVideos()" id="searchBtn">بحث</button>
+            </div>
+        </div>
+        
+        <!-- الإحصائيات -->
+        <div class="stats-bar" id="statsBar" style="display: none;">
+            <span class="results-count" id="resultsCount">0 نتيجة</span>
+            <span class="cc-badge"><i class="fas fa-cc"></i> مشاع إبداعي CC BY</span>
+        </div>
+        
+        <!-- النتائج -->
+        <div class="videos-grid" id="resultsGrid">
+            <div class="no-results">
+                <i class="fas fa-search"></i>
+                <h3>ابحث عن دورات</h3>
+                <p>اكتب كلمة البحث في الأعلى وشاهد النتائج هنا</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>جميع الفيديوهات مرخصة برخصة المشاع الإبداعي CC BY - يرجى نسب العمل لأصحابه</p>
+        </div>
+    </div>
+    
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const resultsGrid = document.getElementById('resultsGrid');
+        const statsBar = document.getElementById('statsBar');
+        const resultsCount = document.getElementById('resultsCount');
+        
+        async function searchVideos() {
+            const query = searchInput.value.trim();
+            
+            if (!query) {
+                alert('الرجاء إدخال كلمة البحث');
+                return;
+            }
+            
+            // تشغيل حالة التحميل
+            searchBtn.disabled = true;
+            searchBtn.textContent = 'جاري البحث...';
+            statsBar.style.display = 'none';
+            resultsGrid.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>جاري البحث عن "${query}"...</p>
+                </div>
+            `;
+            
+            try {
+                // محاولة قراءة من الملف المحلي أولاً
+                let videos = [];
+                
+                try {
+                    const response = await fetch('/data/videos.json');
+                    const data = await response.json();
+                    videos = data.videos || [];
+                } catch (e) {
+                    console.log('ما في ملف محلي بعد، بنستخدم البحث المباشر');
+                }
+                
+                // فلترة حسب البحث
+                const filtered = videos.filter(v => 
+                    v.title.toLowerCase().includes(query.toLowerCase())
+                );
+                
+                if (filtered.length > 0) {
+                    displayResults(filtered);
+                    statsBar.style.display = 'flex';
+                    resultsCount.textContent = `${filtered.length} نتيجة لـ "${query}"`;
+                } else {
+                    resultsGrid.innerHTML = `
+                        <div class="no-results">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <h3>لا توجد نتائج</h3>
+                            <p>لم نعثر على فيديوهات لـ "${query}"</p>
+                        </div>
+                    `;
+                }
+                
+            } catch (error) {
+                console.error('خطأ:', error);
+                resultsGrid.innerHTML = `
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>حدث خطأ</h3>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            } finally {
+                searchBtn.disabled = false;
+                searchBtn.textContent = 'بحث';
+            }
+        }
+        
+        function displayResults(videos) {
+            let html = '';
+            
+            videos.forEach(video => {
+                const videoId = video.videoId || video.id?.videoId;
+                const title = video.title || video.snippet?.title;
+                const channel = video.channel || video.snippet?.channelTitle;
+                const thumb = video.thumbnails?.medium?.url || video.snippet?.thumbnails?.medium?.url || 'https://via.placeholder.com/320x180';
+                const date = video.publishedAt || video.snippet?.publishedAt;
+                
+                html += `
+                    <div class="video-card">
+                        <img src="${thumb}" class="video-thumb" alt="${title}">
+                        <div class="video-info">
+                            <div class="video-title">${title}</div>
+                            <div class="video-channel"><i class="fas fa-user"></i> ${channel}</div>
+                            <div class="video-date"><i class="far fa-calendar"></i> ${new Date(date).toLocaleDateString('ar-SA')}</div>
+                            <a href="https://youtube.com/watch?v=${videoId}" target="_blank" class="watch-btn">
+                                <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            resultsGrid.innerHTML = html;
+        }
+        
+        // البحث عند الضغط على Enter
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchVideos();
+            }
+        });
+    </script>
+</body>
+</html>
