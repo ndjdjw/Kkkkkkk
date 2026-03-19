@@ -1,154 +1,16 @@
 {
   "videos": [
     {
-      "videoId": "hwQyfTmxt9I",
-      "title": "New Course Dropping Soon...",
-      "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/hwQyfTmxt9I/mqdefault.jpg"
-        }
-      }
+      "videoId": "rfscVS0vtbw",
+      "title": "Learn Python - Full Course for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/rfscVS0vtbw/mqdefault.jpg" } }
     },
     {
-      "videoId": "-vqGZaThouQ",
-      "title": "New Course Dropping Soon...",
+      "videoId": "N4mEzFDjqtA",
+      "title": "Python for Beginners - Learn Python in 1 Hour",
       "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/-vqGZaThouQ/mqdefault.jpg"
-        }
-      }
-    },
-    {
-      "videoId": "CIXT-kc3l6g",
-      "title": "Top Programming Languages to Learn in 2026 #ai #technology #codeprep #programming #coding #tech",
-      "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/CIXT-kc3l6g/mqdefault.jpg"
-        }
-      }
-    },
-    {
-      "videoId": "naNcmnKskUE",
-      "title": "Top 5 Programming Languages to Learn in 2026 (to Actually Get Hired)",
-      "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/naNcmnKskUE/mqdefault.jpg"
-        }
-      }
-    },
-    {
-      "videoId": "bshe96X5KkA",
-      "title": "AI Course for Developers - Build AI-Powered Apps",
-      "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/bshe96X5KkA/mqdefault.jpg"
-        }
-      }
-    },
-    {
-      "videoId": "PtETUYa3i2Q",
-      "title": "AI Course for Developers – Build AI-Powered Apps with React",
-      "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/PtETUYa3i2Q/mqdefault.jpg"
-        }
-      }
-    },
-    {
-      "videoId": "V7TMkZH1AkM",
-      "title": "A Practical AI Course for Developers is Coming...",
-      "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/V7TMkZH1AkM/mqdefault.jpg"
-        }
-      }
-    },
-    {
-      "videoId": "h4FRpDGuJyI",
-      "title": "Microsoft laid off 6,000 people… but why?",
-      "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/h4FRpDGuJyI/mqdefault.jpg"
-        }
-      }
-    },
-    {
-      "videoId": "EWd3_I4X32g",
-      "title": "Spring Boot Project: Build a REST API for an E-commerce Platform",
-      "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/EWd3_I4X32g/mqdefault.jpg"
-        }
-      }
-    },
-    {
-      "videoId": "M5B-xBmznok",
-      "title": "Part 2 of my Spring Boot course dropping soon!",
-      "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/M5B-xBmznok/mqdefault.jpg"
-        }
-      }
-    },
-    {
-      "videoId": "Iqz7BWePOys",
-      "title": "How Spring Boot Can Be A Game Changer For Your Career",
-      "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/Iqz7BWePOys/mqdefault.jpg"
-        }
-      }
-    },
-    {
-      "videoId": "v73-ps01c5w",
-      "title": "How Spring Boot Can Be A Game Changer For Your Career",
-      "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/v73-ps01c5w/mqdefault.jpg"
-        }
-      }
-    },
-    {
-      "videoId": "gJrjgg1KVL4",
-      "title": "Spring Boot Tutorial for Beginners [2025]",
-      "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/gJrjgg1KVL4/mqdefault.jpg"
-        }
-      }
-    },
-    {
-      "videoId": "lvg8pBJ2kFg",
-      "title": "You asked for it. It’s finally happening!",
-      "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/lvg8pBJ2kFg/mqdefault.jpg"
-        }
-      }
-    },
-    {
-      "videoId": "K5KVEU3aaeQ",
-      "title": "Python Full Course for Beginners",
-      "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/K5KVEU3aaeQ/mqdefault.jpg"
-        }
-      }
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/N4mEzFDjqtA/mqdefault.jpg" } }
     }
   ]
 }
