@@ -2,8 +2,6 @@ name: جلب فيديوهات Mosh
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */6 * * *'
 
 jobs:
   fetch:
@@ -18,31 +16,26 @@ jobs:
       - name: إنشاء مجلد البيانات
         run: mkdir -p data
       
-      - name: جلب RSS
-        run: curl -s "https://www.youtube.com/feeds/videos.xml?channel_id=UCWv7vMbMWH4-V0ZXdmDpPBA" > feed.xml
-      
-      - name: استخراج الفيديوهات
+      - name: جلب الفيديوهات
         run: |
+          echo "جلب الفيديوهات من قناة Mosh..."
+          
+          # جلب RSS
+          curl -s "https://www.youtube.com/feeds/videos.xml?channel_id=UCWv7vMbMWH4-V0ZXdmDpPBA" > feed.xml
+          
           # استخراج ids
           grep -oP '(?<=<yt:videoId>).*?(?=</yt:videoId>)' feed.xml > ids.txt
           
-          # استخراج العناوين
-          grep -oP '(?<=<title>).*?(?=</title>)' feed.xml | tail -n +2 > titles.txt
+          # بداية ملف JSON
+          echo '{"videos": [' > data/videos.json
           
-          # بناء JSON
-          echo '{"videos": []}' > data/videos.json
-          
-          # التأكد من وجود نتائج
-          if [ -s ids.txt ]; then
-            # بداية المصفوفة
-            echo '{"videos": [' > data/videos.json
-            
-            # دمج البيانات
-            paste ids.txt titles.txt | while read id title; do
+          # قراءة ids وبناء JSON
+          while read id; do
+            if [ ! -z "$id" ]; then
               cat >> data/videos.json <<EOF
               {
                 "videoId": "$id",
-                "title": "$title",
+                "title": "فيديو من قناة Mosh",
                 "channel": "Programming with Mosh",
                 "thumbnails": {
                   "medium": {
@@ -51,14 +44,15 @@ jobs:
                 }
               },
 EOF
-            done
-            
-            # إزالة آخر فاصلة
-            sed -i '$ s/,$//' data/videos.json
-            echo ']}' >> data/videos.json
-          else
-            echo '{"videos": []}' > data/videos.json
-          fi
+            fi
+          done < ids.txt
+          
+          # إزالة آخر فاصلة
+          sed -i '$ s/,$//' data/videos.json
+          echo ']}' >> data/videos.json
+          
+          # تنظيف
+          rm -f feed.xml ids.txt
           
           echo "✅ تم جلب الفيديوهات"
       
@@ -67,5 +61,5 @@ EOF
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
           git add data/videos.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "تحديث الفيديوهات $(date)"
+          git commit -m "تحديث الفيديوهات" || echo "لا تغييرات"
           git push
