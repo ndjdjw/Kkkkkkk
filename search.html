@@ -3,371 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>البحث الذكي - منصة العلوم الشرعية</title>
+    <title>مكتبة الدورات | أكاديمية زاد</title>
+    <!-- نفس روابط الخطوط والأيقونات -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * { font-family: 'Tajawal', sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: linear-gradient(135deg, #1e3c32 0%, #2a5a4a 100%); min-height: 100vh; padding: 20px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
+        body { background: #f8fafc; color: #1e293b; padding: 20px; }
         .container { max-width: 1400px; margin: 0 auto; }
-        
-        .header {
-            background: white; padding: 20px 30px; border-radius: 15px; margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center;
-        }
+        /* إعادة استخدام أنماط الهيدر والفوتر من index.html (يمكنك نسخها) */
+        /* ... (لنختصر) ... */
+        .header { background: white; padding: 20px; border-radius: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
         .logo h2 { color: #1e3c32; margin: 0; }
-        .logo i { color: #ffd966; margin-left: 10px; }
-        .nav-links a { color: #333; text-decoration: none; margin: 0 15px; font-weight: 500; transition: all 0.3s; }
-        .nav-links a:hover, .nav-links a.active { color: #1e3c32; font-weight: bold; border-bottom: 2px solid #ffd966; }
-        
-        .search-section {
-            background: white; border-radius: 20px; padding: 40px; margin-bottom: 30px; text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        .search-section h1 { color: #1e3c32; font-size: 36px; margin-bottom: 10px; }
-        .search-section p { color: #666; font-size: 18px; margin-bottom: 30px; }
-        
-        .search-box {
-            display: flex; gap: 10px; max-width: 600px; margin: 0 auto; position: relative;
-        }
-        .search-box input {
-            flex: 1; padding: 15px 20px; border: 2px solid #e0e0e0; border-radius: 50px; font-size: 16px;
-        }
-        .search-box input:focus { outline: none; border-color: #1e3c32; }
-        .search-box button {
-            background: #1e3c32; color: white; border: none; border-radius: 50px; padding: 15px 30px;
-            font-size: 16px; font-weight: bold; cursor: pointer; transition: all 0.3s;
-        }
-        .search-box button:hover { background: #2a5a4a; transform: scale(1.05); }
-        .search-box button:disabled { background: #ccc; cursor: not-allowed; }
-        
-        /* قسم الاقتراحات الجديد */
-        .suggestions-section {
-            background: white; border-radius: 20px; padding: 30px; margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .suggestions-section h3 {
-            color: #1e3c32; font-size: 24px; margin-bottom: 20px; text-align: center;
-        }
-        .suggestions-grid {
-            display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;
-        }
-        .suggestion-chip {
-            background: #f5f5f5; color: #1e3c32; padding: 12px 25px; border-radius: 50px;
-            font-size: 16px; font-weight: 500; cursor: pointer; transition: all 0.3s;
-            border: 2px solid transparent; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .suggestion-chip:hover {
-            background: #ffd966; transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .suggestion-chip i { margin-left: 8px; color: #1e3c32; }
-        
-        .stats {
-            background: white; border-radius: 15px; padding: 20px; margin-bottom: 30px;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .count { color: #1e3c32; font-weight: bold; font-size: 18px; }
-        .badge { background: #ffd966; color: #1e3c32; padding: 8px 20px; border-radius: 50px; font-weight: bold; }
-        
-        .results-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-bottom: 40px;
-        }
-        .video-card {
-            background: white; border-radius: 15px; overflow: hidden; transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .video-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
-        .video-thumb { width: 100%; height: 180px; object-fit: cover; }
+        .nav-links a { color: #333; text-decoration: none; margin: 0 15px; }
+        .nav-links a.active { color: #10b981; font-weight: bold; }
+        .search-section { background: white; border-radius: 30px; padding: 40px; margin-bottom: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .search-section h1 { color: #1e293b; font-size: 40px; }
+        .search-box { display: flex; gap: 10px; max-width: 700px; margin: 30px auto; }
+        .search-box input { flex: 1; padding: 20px; border: 2px solid #e2e8f0; border-radius: 50px; font-size: 18px; }
+        .search-box input:focus { outline: none; border-color: #10b981; }
+        .search-box button { background: #10b981; color: white; border: none; border-radius: 50px; padding: 20px 50px; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .search-box button:hover { background: #059669; }
+        .suggestions { background: white; border-radius: 25px; padding: 30px; margin-bottom: 30px; }
+        .suggestions-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+        .chip { background: #f1f5f9; color: #1e293b; padding: 12px 25px; border-radius: 50px; cursor: pointer; transition: 0.3s; }
+        .chip:hover { background: #10b981; color: white; }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+        .video-card { background: white; border-radius: 20px; overflow: hidden; transition: 0.3s; }
+        .video-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -15px #10b981; }
+        .video-thumb { width: 100%; height: 200px; object-fit: cover; }
         .video-info { padding: 20px; }
-        .video-title { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
-        .video-channel { color: #666; font-size: 14px; margin-bottom: 10px; }
-        .video-channel i { color: #1e3c32; margin-left: 5px; }
-        .watch-btn {
-            display: block; background: #1e3c32; color: white; text-decoration: none; padding: 10px;
-            border-radius: 25px; text-align: center; transition: all 0.3s;
-        }
-        .watch-btn:hover { background: #2a5a4a; color: white; text-decoration: none; }
-        
-        .loading { text-align: center; padding: 60px; grid-column: 1/-1; }
-        .spinner {
-            border: 5px solid #f3f3f3; border-top: 5px solid #1e3c32; border-radius: 50%;
-            width: 60px; height: 60px; animation: spin 1s linear infinite; margin: 0 auto 20px;
-        }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        
-        .footer { text-align: center; color: white; padding: 20px; }
-        .no-results, .error-message {
-            background: white; padding: 50px; border-radius: 15px; text-align: center; grid-column: 1/-1;
-        }
-        
-        /* تبويبات عربي/إنجليزي للاقتراحات */
-        .tabs {
-            display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;
-        }
-        .tab {
-            padding: 10px 30px; border-radius: 50px; cursor: pointer; font-weight: bold;
-            transition: all 0.3s; background: #f0f0f0; color: #666;
-        }
-        .tab.active {
-            background: #1e3c32; color: white;
-        }
+        .video-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+        .watch-btn { display: block; background: #10b981; color: white; text-align: center; padding: 12px; border-radius: 30px; text-decoration: none; }
+        .footer { text-align: center; margin-top: 50px; color: #64748b; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo"><h2><i class="fas fa-quran"></i> منصة العلوم الشرعية</h2></div>
+            <div class="logo"><h2><i class="fas fa-graduation-cap"></i> أكاديمية زاد</h2></div>
             <div class="nav-links">
                 <a href="index.html">الرئيسية</a>
-                <a href="about.html">عن المنصة</a>
-                <a href="course.html">الدورات</a>
-                <a href="search.html" class="active">البحث الذكي</a>
-                <a href="contact.html">اتصل بنا</a>
+                <a href="search.html" class="active">الدورات</a>
             </div>
         </div>
-        
+
         <div class="search-section">
-            <h1>🔍 ابحث عن أي شيء</h1>
-            <p>أكثر من 500 فيديو عربي وإنجليزي في جميع المجالات</p>
+            <h1>🔍 ابحث عن دورتك المفضلة</h1>
+            <p>أكثر من 500 فيديو تعليمي في مختلف المجالات التقنية</p>
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="اكتب كلمة البحث..." onkeypress="if(event.key === 'Enter') searchVideos()">
+                <input type="text" id="searchInput" placeholder="اكتب كلمة البحث (مثال: ذكاء اصطناعي، بايثون، أمن سيبراني)" onkeypress="if(event.key === 'Enter') searchVideos()">
                 <button onclick="searchVideos()" id="searchBtn">بحث</button>
             </div>
         </div>
-        
-        <!-- تبويبات الاقتراحات -->
-        <div class="tabs">
-            <div class="tab active" onclick="showSuggestions('all')" id="tabAll">جميع الاقتراحات</div>
-            <div class="tab" onclick="showSuggestions('arabic')" id="tabArabic">عربي</div>
-            <div class="tab" onclick="showSuggestions('english')" id="tabEnglish">إنجليزي</div>
+
+        <div class="suggestions">
+            <h3 style="text-align: center; margin-bottom: 20px;">اقتراحات البحث الأكثر طلباً</h3>
+            <div class="suggestions-grid" id="suggestionsGrid"></div>
         </div>
-        
-        <!-- قسم الاقتراحات الذهبي -->
-        <div class="suggestions-section" id="suggestionsSection">
-            <h3><i class="fas fa-lightbulb"></i> اقتراحات البحث الأكثر طلباً 2026</h3>
-            <div class="suggestions-grid" id="suggestionsGrid">
-                <!-- هنا تظهر الاقتراحات ديناميكياً -->
-            </div>
+
+        <div class="stats" id="stats" style="display: none; justify-content: space-between; background: white; padding: 20px; border-radius: 20px; margin-bottom: 30px;">
+            <span class="count" id="resultCount"></span>
+            <span class="badge">محتوى حلال 100%</span>
         </div>
-        
-        <div class="stats" id="stats" style="display: none;">
-            <span class="count" id="resultCount">0 نتيجة</span>
-            <span class="badge"><i class="fas fa-check-circle"></i> مكتبة ضخمة</span>
-        </div>
-        
+
         <div class="results-grid" id="results">
-            <div class="loading">
-                <div class="spinner"></div>
-                <p>جارٍ تحميل الفيديوهات...</p>
-            </div>
+            <div style="grid-column: 1/-1; text-align: center; padding: 60px;">اكتب كلمة البحث وستظهر النتائج هنا</div>
         </div>
-        
+
         <div class="footer">
-            <p>جميع الفيديوهات من مصادر موثوقة - محدث يومياً</p>
+            <p>جميع الفيديوهات من قنوات تعليمية موثوقة ومرخصة</p>
         </div>
     </div>
 
     <script>
-        // قائمة الكلمات اللي ضفناها (مباشرة من الكود)
-        const SUGGESTIONS = {
-            english: [
-                "AI tools 2026",
-                "ChatGPT tutorial",
-                "machine learning",
-                "make money online",
-                "side hustles 2026",
-                "learn Python",
-                "web development",
-                "JavaScript tutorial",
-                "React js",
-                "investing for beginners",
-                "grow on YouTube",
-                "study effectively",
-                "productivity tips",
-                "home workout",
-                "weight loss tips",
-                "dinner recipes",
-                "air fryer recipes",
-                "passive income",
-                "YouTube algorithm",
-                "Python vs JavaScript",
-                "best laptops 2026",
-                "AI phone features",
-                "free games PC"
-            ],
-            arabic: [
-                "جوجل جيميني",
-                "ChatGPT بالعربي",
-                "الذكاء الاصطناعي",
-                "شرح Hailuo AI",
-                "تعلم البرمجة",
-                "أفضل لغة برمجة",
-                "مباراة الأهلي",
-                "كأس العالم للأندية",
-                "نتائج الثانوية العامة",
-                "الجامعة الإسلامية",
-                "سعر الذهب اليوم",
-                "سعر الدولار",
-                "أخبار غزة",
-                "رواتب الموظفين",
-                "توقعات ليلى عبد اللطيف",
-                "شباب البومب 13",
-                "مسلسل فهد البطل",
-                "فيلم سيكو سيكو",
-                "نور ستارز",
-                "تعلم الإنجليزية",
-                "تمارين منزلية",
-                "وصفات طبخ سريعة",
-                "تطوير الذات",
-                "الربح من الإنترنت",
-                "التسويق بالعمولة",
-                "تفسير الأحلام",
-                "الرقية الشرعية",
-                "دعاء المطر",
-                "أذكار الصباح",
-                "سورة البقرة",
-                "الشفاء بالقرآن",
-                "تفسير القرآن",
-                "قصص الأنبياء",
-                "أحمد العجمي",
-                "ماهر المعيقلي",
-                "عمر هشام العربي",
-                "محمد عبده",
-                "أغاني راب عربي",
-                "شيرين عبد الوهاب",
-                "تامر حسني",
-                "أغاني حزينة",
-                "فري فاير",
-                "ببجي موبايل",
-                "فورتنايت",
-                "تحديات عائلية",
-                "مطبخ منال العالم",
-                "حلويات سهلة",
-                "رجيم سريع",
-                "تمارين كارديو",
-                "الدوري المصري",
-                "الدوري السعودي",
-                "ميسي ورونالدو"
-            ]
-        };
+        // قائمة الكلمات البحثية الأكثر طلباً في 2026 (موافق للشرع)
+        const SUGGESTIONS = [
+            "ذكاء اصطناعي", "تعلم الآلة", "أمن سيبراني", "اختراق أخلاقي",
+            "بايثون", "تحليل بيانات", "تسويق رقمي", "تطوير تطبيقات",
+            "شبكات", "قواعد بيانات", "حوسبة سحابية", "تمويل شخصي",
+            "AI", "Machine Learning", "Cybersecurity", "Python",
+            "Data Science", "Digital Marketing", "Cloud Computing"
+        ];
 
         let videosData = [];
-        let isLoading = false;
-        let currentLang = 'all';
-
-        function showSuggestions(lang) {
-            currentLang = lang;
-            
-            // تحديث التبويبات
-            document.getElementById('tabAll').classList.remove('active');
-            document.getElementById('tabArabic').classList.remove('active');
-            document.getElementById('tabEnglish').classList.remove('active');
-            
-            if (lang === 'all') {
-                document.getElementById('tabAll').classList.add('active');
-            } else if (lang === 'arabic') {
-                document.getElementById('tabArabic').classList.add('active');
-            } else {
-                document.getElementById('tabEnglish').classList.add('active');
-            }
-            
-            // عرض الاقتراحات
-            displaySuggestions();
-        }
 
         function displaySuggestions() {
             const grid = document.getElementById('suggestionsGrid');
-            let suggestionsToShow = [];
-            
-            if (currentLang === 'all') {
-                suggestionsToShow = [...SUGGESTIONS.arabic.slice(0, 25), ...SUGGESTIONS.english.slice(0, 25)];
-            } else if (currentLang === 'arabic') {
-                suggestionsToShow = SUGGESTIONS.arabic;
-            } else {
-                suggestionsToShow = SUGGESTIONS.english;
-            }
-            
-            // خلط عشوائي للعرض
-            suggestionsToShow = suggestionsToShow.sort(() => 0.5 - Math.random()).slice(0, 30);
-            
-            let html = '';
-            suggestionsToShow.forEach(word => {
-                html += `<div class="suggestion-chip" onclick="useSuggestion('${word.replace(/'/g, "\\'")}')">
-                    <i class="fas fa-search"></i> ${word}
-                </div>`;
+            grid.innerHTML = '';
+            SUGGESTIONS.forEach(word => {
+                const chip = document.createElement('div');
+                chip.className = 'chip';
+                chip.textContent = word;
+                chip.onclick = () => {
+                    document.getElementById('searchInput').value = word;
+                    searchVideos();
+                };
+                grid.appendChild(chip);
             });
-            
-            grid.innerHTML = html;
-        }
-
-        function useSuggestion(word) {
-            document.getElementById('searchInput').value = word;
-            searchVideos();
         }
 
         async function loadVideos() {
             try {
-                const response = await fetch('https://raw.githubusercontent.com/ndjdjw/Kkkkkkk/main/data/videos.json');
-                
-                if (!response.ok) {
-                    throw new Error(`فشل التحميل (${response.status})`);
-                }
-                
+                const response = await fetch('/data/videos.json');
+                if (!response.ok) throw new Error('فشل التحميل');
                 const data = await response.json();
                 videosData = data.videos || [];
                 console.log(`✅ تم تحميل ${videosData.length} فيديو`);
-                return true;
             } catch (error) {
                 console.error('خطأ في تحميل الفيديوهات:', error);
-                return false;
             }
         }
 
         async function searchVideos() {
-            const query = document.getElementById('searchInput').value.trim();
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            if (!query) return alert('الرجاء إدخال كلمة البحث');
             const resultsDiv = document.getElementById('results');
             const statsDiv = document.getElementById('stats');
             const resultCount = document.getElementById('resultCount');
             const searchBtn = document.getElementById('searchBtn');
 
-            if (!query) {
-                alert('الرجاء إدخال كلمة البحث');
-                return;
-            }
-
-            if (isLoading) return;
-            isLoading = true;
-            
             searchBtn.disabled = true;
             searchBtn.textContent = 'جاري البحث...';
-            resultsDiv.innerHTML = `
-                <div class="loading">
-                    <div class="spinner"></div>
-                    <p>جاري البحث عن "${query}"...</p>
-                </div>
-            `;
+            resultsDiv.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:60px;"><i class="fas fa-spinner fa-spin"></i> جاري البحث...</div>';
 
-            if (videosData.length === 0) {
-                await loadVideos();
-            }
+            if (videosData.length === 0) await loadVideos();
 
-            const filtered = videosData.filter(v => 
-                v.title && v.title.toLowerCase().includes(query.toLowerCase())
-            );
-
+            const filtered = videosData.filter(v => v.title && v.title.toLowerCase().includes(query));
             if (filtered.length > 0) {
                 let html = '';
-                filtered.slice(0, 20).forEach(v => {
+                filtered.slice(0, 30).forEach(v => {
                     html += `
                         <div class="video-card">
-                            <img src="${v.thumbnails?.medium?.url || 'https://i.ytimg.com/vi/' + v.videoId + '/mqdefault.jpg'}" 
-                                 class="video-thumb" alt="${v.title}">
+                            <img src="${v.thumbnails?.medium?.url || 'https://via.placeholder.com/320x180/1e3c32/ffffff?text=فيديو'}" class="video-thumb">
                             <div class="video-info">
                                 <div class="video-title">${v.title}</div>
-                                <div class="video-channel"><i class="fas fa-user"></i> ${v.channel || 'قناة تعليمية'}</div>
-                                <a href="https://youtube.com/watch?v=${v.videoId}" target="_blank" class="watch-btn">
-                                    <i class="fab fa-youtube"></i> مشاهدة
-                                </a>
+                                <div class="video-channel">${v.channel || 'قناة تعليمية'}</div>
+                                <a href="https://youtube.com/watch?v=${v.videoId}" target="_blank" class="watch-btn"><i class="fab fa-youtube"></i> مشاهدة</a>
                             </div>
                         </div>
                     `;
@@ -376,25 +148,16 @@
                 statsDiv.style.display = 'flex';
                 resultCount.textContent = `${filtered.length} نتيجة لـ "${query}"`;
             } else {
-                resultsDiv.innerHTML = `
-                    <div class="no-results">
-                        <i class="fas fa-search" style="font-size: 48px; color: #999; margin-bottom: 20px;"></i>
-                        <h3>لا توجد نتائج لـ "${query}"</h3>
-                        <p style="color: #666;">جرب كلمة من الاقتراحات أعلاه</p>
-                    </div>
-                `;
+                resultsDiv.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:60px;">لا توجد نتائج. جرب كلمة أخرى.</div>';
                 statsDiv.style.display = 'none';
             }
-
             searchBtn.disabled = false;
             searchBtn.textContent = 'بحث';
-            isLoading = false;
         }
 
-        // التهيئة عند تحميل الصفحة
-        window.addEventListener('load', async () => {
-            await loadVideos();
-            showSuggestions('all');
+        window.addEventListener('load', () => {
+            displaySuggestions();
+            loadVideos();
         });
     </script>
 </body>
