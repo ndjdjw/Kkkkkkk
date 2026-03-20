@@ -1,24 +1,24 @@
 {
   "videos": [
-    {
-      "videoId": "rfscVS0vtbw",
-      "title": "Python Full Course for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/rfscVS0vtbw/mqdefault.jpg"
-        }
-      }
-    },
-    {
-      "videoId": "N4mEzFDjqtA",
-      "title": "Python for Beginners - Learn Python in 1 Hour",
-      "channel": "Programming with Mosh",
-      "thumbnails": {
-        "medium": {
-          "url": "https://i.ytimg.com/vi/N4mEzFDjqtA/mqdefault.jpg"
-        }
-      }
-    }
+    {"videoId": "rfscVS0vtbw", "title": "Python Full Course for Beginners", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/rfscVS0vtbw/mqdefault.jpg"}}},
+    {"videoId": "N4mEzFDjqtA", "title": "Python for Beginners - Learn Python in 1 Hour", "channel": "Programming with Mosh", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/N4mEzFDjqtA/mqdefault.jpg"}}},
+    {"videoId": "8DvywoWv6fI", "title": "JavaScript Tutorial for Beginners", "channel": "Programming with Mosh", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/8DvywoWv6fI/mqdefault.jpg"}}},
+    {"videoId": "PkZNo7MFNFg", "title": "Learn JavaScript - Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/PkZNo7MFNFg/mqdefault.jpg"}}},
+    {"videoId": "Gv9_4yMHFhI", "title": "Artificial Intelligence Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/Gv9_4yMHFhI/mqdefault.jpg"}}},
+    {"videoId": "5NgNicANyqM", "title": "AI for Beginners", "channel": "Simplilearn", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/5NgNicANyqM/mqdefault.jpg"}}},
+    {"videoId": "nPJg7GXjN8s", "title": "Cybersecurity Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/nPJg7GXjN8s/mqdefault.jpg"}}},
+    {"videoId": "yyUHQIec83I", "title": "Cybersecurity for Beginners", "channel": "Simplilearn", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/yyUHQIec83I/mqdefault.jpg"}}},
+    {"videoId": "jBzwzrDvZ18", "title": "Data Science Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/jBzwzrDvZ18/mqdefault.jpg"}}},
+    {"videoId": "SqcY0GlETPk", "title": "Data Science for Beginners", "channel": "Simplilearn", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/SqcY0GlETPk/mqdefault.jpg"}}},
+    {"videoId": "VgPJ3Vp3Jk4", "title": "Digital Marketing Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/VgPJ3Vp3Jk4/mqdefault.jpg"}}},
+    {"videoId": "lxJRq3pK4KI", "title": "SEO Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/lxJRq3pK4KI/mqdefault.jpg"}}},
+    {"videoId": "i_LwzRVP7bg", "title": "Machine Learning Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/i_LwzRVP7bg/mqdefault.jpg"}}},
+    {"videoId": "qFJeN9V1ZsI", "title": "Machine Learning for Beginners", "channel": "Simplilearn", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/qFJeN9V1ZsI/mqdefault.jpg"}}},
+    {"videoId": "h4je6JbFz6M", "title": "Ethical Hacking Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/h4je6JbFz6M/mqdefault.jpg"}}},
+    {"videoId": "VqCgcpAypFQ", "title": "Penetration Testing Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/VqCgcpAypFQ/mqdefault.jpg"}}},
+    {"videoId": "Ke90Tje7VS0", "title": "React JS Tutorial", "channel": "Programming with Mosh", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/Ke90Tje7VS0/mqdefault.jpg"}}},
+    {"videoId": "DLX62G4lc44", "title": "React Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/DLX62G4lc44/mqdefault.jpg"}}},
+    {"videoId": "3c-iBn73dDE", "title": "Network Security Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/3c-iBn73dDE/mqdefault.jpg"}}},
+    {"videoId": "t2yrQsYg3UQ", "title": "Network+ Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/t2yrQsYg3UQ/mqdefault.jpg"}}}
   ]
 }
