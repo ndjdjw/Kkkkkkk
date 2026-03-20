@@ -1,12 +1,12 @@
-name: جلب 500 فيديو من قنوات متعددة (أعلى الكلمات طلباً 2026)
+name: جلب 500 فيديو (عربي + إنجليزي)
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */12 * * *' # يتحدث كل 12 ساعة
+    - cron: '0 */12 * * *'
 
 jobs:
-  fetch-500-videos:
+  fetch-videos:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -21,45 +21,108 @@ jobs:
           sudo apt install -y python3-pip jq
           pip install yt-dlp
 
-      - name: جلب 500 فيديو مستهدف بأعلى الكلمات طلباً
+      - name: جلب 500 فيديو بكلمات عربية وإنجليزية
         run: |
           mkdir -p data
           
-          # قائمة الكلمات المفتاحية الأكثر بحثاً (من الجدول أعلاه)
+          # قائمة كلمات البحث (إنجليزي + عربي) - 60 كلمة × 10 فيديوهات = 600 فيديو
           KEYWORDS=(
+            # ENGLISH KEYWORDS (الأكثر طلباً عالمياً)
             "AI tools 2026"
-            "learn Python programming from scratch"
-            "how to make money online 2026"
-            "web development full course"
-            "ChatGPT tutorial"
-            "best side hustles 2026"
-            "investing for beginners"
-            "youtube seo 2026"
-            "how to save money on a low income"
-            "data science for beginners"
-            "home workout no equipment"
-            "how to grow on youtube in 2026"
-            "air fryer recipes for beginners"
+            "ChatGPT tutorial for beginners"
             "machine learning for beginners"
-            "best free online courses 2026"
+            "how to make money online 2026"
+            "best side hustles 2026"
+            "learn Python programming from scratch"
+            "web development full course 2026"
+            "JavaScript tutorial for beginners"
+            "React js crash course"
+            "investing for beginners with 100 dollars"
+            "how to grow on YouTube in 2026"
+            "how to study effectively"
+            "productivity tips 2026"
+            "home workout no equipment 30 min"
+            "weight loss tips 2026"
+            "15 minute dinner recipes healthy"
+            "air fryer recipes for beginners"
+            "best mirrorless camera under 500"
+            "how to make passive income with no money"
+            "how does the YouTube algorithm work"
+            "Python vs JavaScript which is easier"
+            "best laptops for students 2026"
+            "AI phone features you should try"
+            "best free games 2026 PC"
+            
+            # ARABIC KEYWORDS (الأكثر طلباً في الوطن العربي)
+            "جوجل جيميني"
+            "ChatGPT بالعربي"
+            "أدوات الذكاء الاصطناعي 2026"
+            "شرح Hailuo AI"
+            "كيف أتعلم البرمجة من الصفر"
+            "أفضل لغة برمجة للمبتدئين"
+            "مباراة الأهلي اليوم"
+            "ترتيب مجموعة الأهلي"
+            "كأس العالم للأندية"
+            "نتائج الثانوية العامة 2026"
+            "الجامعة الإسلامية بالمدينة"
+            "سعر الذهب اليوم في مصر"
+            "سعر الدولار"
+            "أخبار غزة الآن"
+            "رواتب الموظفين في العراق"
+            "توقعات ليلى عبد اللطيف 2026"
+            "شباب البومب 13"
+            "مسلسل فهد البطل"
+            "فيلم سيكو سيكو"
+            "نور ستارز"
+            "كيف تتعلم الإنجليزية بسرعة"
+            "تمارين منزلية بدون معدات"
+            "وصفات طبخ سريعة"
+            "تطوير الذات والثقة بالنفس"
+            "الربح من الإنترنت للمبتدئين"
+            "التسويق بالعمولة شرح"
+            "أفضل قنوات يوتيوب عربية"
+            "تفسير الأحلام لابن سيرين"
+            "الرقية الشرعية مكتوبة"
+            "دعاء المطر"
+            "أذكار الصباح والمساء"
+            "سورة البقرة"
+            "الشفاء بالقرآن"
+            "تفسير القرآن الكريم"
+            "قصص الأنبياء للأطفال"
+            "أحمد العجمي قرآن"
+            "ماهر المعيقلي"
+            "عمر هشام العربي"
+            "محمد عبده أغاني"
+            "أغاني راب عربي"
+            "شيرين عبد الوهاب"
+            "تامر حسني"
+            "أغاني حزينة"
+            "أغاني رومانسية"
+            "فري فاير"
+            "ببجي موبايل"
+            "فورتنايت"
+            "مinecraft بناء"
+            "تحديات عائلية"
+            "مطبخ منال العالم"
+            "حلويات سهلة"
+            "رجيم سريع"
+            "تمارين كارديو"
+            "كرة القدم اليوم"
+            "هداف الدوري المصري"
+            "الدوري السعودي"
+            "ميسي ورونالدو"
           )
 
-          # ملف مؤقت لجمع كل الفيديوهات
           echo '[]' > all_videos.json
 
-          # حلقة تكرار للبحث عن كل كلمة مفتاحية وجلب 30 فيديو لكل منها
           for KEYWORD in "${KEYWORDS[@]}"; do
             echo "🔍 جاري البحث عن: $KEYWORD"
-            
-            # استدعاء yt-dlp لجلب بيانات الفيديو
-            yt-dlp "ytsearch30:$KEYWORD" --dump-json --flat-playlist 2>/dev/null | jq -c '.' >> temp_raw.json
+            yt-dlp "ytsearch10:$KEYWORD" --dump-json --flat-playlist 2>/dev/null | jq -c '.' >> temp_raw.json
             echo "" >> temp_raw.json
           done
 
-          # تحويل البيانات إلى صيغة JSON صحيحة
           jq -s '.' temp_raw.json > temp.json
           
-          # بناء الملف النهائي بالصيغة المطلوبة لموقعك
           jq '
             {
               videos: [
@@ -73,25 +136,19 @@ jobs:
                     }
                   }
                 }
-              ] | unique_by(.videoId) | .[0:500]  # إزالة التكرارات وأخذ أول 500
+              ] | unique_by(.videoId) | .[0:500]
             }
           ' temp.json > data/videos.json
           
-          # تنظيف الملفات المؤقتة
           rm -f temp_raw.json temp.json
           
-          # عد الفيديوهات وعرض النتيجة
           COUNT=$(jq '.videos | length' data/videos.json)
-          echo "✅ تم جلب ${COUNT} فيديو فريد من أعلى الكلمات طلباً في 2026"
-          
-          # عرض مثال على أول 3 فيديوهات
-          echo "📺 أمثلة على الفيديوهات المجلوبة:"
-          jq '.videos[0:3]' data/videos.json
+          echo "✅ تم جلب ${COUNT} فيديو فريد"
 
       - name: حفظ التغييرات
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
           git add data/videos.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "🔥 تحديث تلقائي لـ500 فيديو مطلوب $(date)"
+          git diff --quiet && git diff --staged --quiet || git commit -m "🔥 تحديث تلقائي - $(date)"
           git push
