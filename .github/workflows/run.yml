@@ -1,12 +1,12 @@
-name: جلب آلاف الفيديوهات تلقائياً (أقوى حل)
+name: جلب فيديوهات حلال (أعلى المجالات طلباً)
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */12 * * *'  # يتحدث كل 12 ساعة
+    - cron: '0 */12 * * *'
 
 jobs:
-  fetch-all-videos:
+  fetch-videos:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -21,76 +21,35 @@ jobs:
           sudo apt install -y python3-pip
           pip install yt-dlp
 
-      - name: جلب فيديوهات لكل الكلمات (5000+ فيديو)
+      - name: جلب فيديوهات من قنوات تعليمية موثوقة
         run: |
           mkdir -p data
           
-          # قائمة كلمات البحث الشاملة (كل اللي ضفناها)
-          KEYWORDS=(
-            # الذكاء الاصطناعي
-            "AI tools 2026"
-            "ChatGPT tutorial"
-            "machine learning"
-            "deep learning"
-            "generative AI"
-            
-            # البرمجة
-            "Python tutorial"
-            "JavaScript course"
-            "React js"
-            "web development"
-            "coding for beginners"
-            
-            # المال والربح
-            "make money online"
-            "side hustles"
-            "investing for beginners"
-            "passive income"
-            "crypto explained"
-            
-            # التسويق
-            "digital marketing"
-            "SEO tutorial"
-            "social media marketing"
-            "content marketing"
-            "affiliate marketing"
-            
-            # الصحة واللياقة
-            "home workout"
-            "weight loss"
-            "yoga for beginners"
-            "healthy recipes"
-            "mental health"
-            
-            # كلمات عربية
-            "جوجل جيميني"
-            "الذكاء الاصطناعي"
-            "تعلم البرمجة"
-            "الربح من الإنترنت"
-            "تطوير الذات"
-            "سورة البقرة"
-            "الرقية الشرعية"
-            "تفسير الأحلام"
-            "أغاني عربية"
-            "فري فاير"
-            "ببجي موبايل"
-            "الدوري السعودي"
-            "مباراة الأهلي"
+          # قائمة قنوات يوتيوب موثوقة (تعليمية بحتة، خالية من المحظورات)
+          CHANNELS=(
+            "freecodecamp"                    # freeCodeCamp (إنجليزي)
+            "ProgrammingwithMosh"             # برمجة نظيف
+            "CoreyMSchafer"                    # Corey Schafer (برمجة)
+            "thenewboston"                      # thenewboston (برمجة)
+            "عبدالرحمن الدوسري"                # قناة عربية للذكاء الاصطناعي
+            "محمد مشالي"                        # برمجة عربية
+            "إسلام ممدوح"                       # تسويق إلكتروني عربي
+            "دحيح"                               # محتوى علمي ثقافي
+            "أكاديمية حسوب"                     # محتوى تقني عربي
           )
 
           # ملف مؤقت
-          echo '[]' > temp_all.json
+          echo '[]' > temp.json
 
-          for KEYWORD in "${KEYWORDS[@]}"; do
-            echo "🔍 جلب 20 فيديو عن: $KEYWORD"
-            
-            # جلب 20 فيديو لكل كلمة (استخدم `ytsearch20`)
-            yt-dlp "ytsearch20:$KEYWORD" --dump-json --flat-playlist 2>/dev/null | \
-              jq -c '{videoId: .id, title: .title, channel: (.channel // .uploader // "قناة"), thumbnails: {medium: {url: ("https://i.ytimg.com/vi/\(.id)/mqdefault.jpg")}}}' >> temp_all.json
-            echo "" >> temp_all.json
+          for CHANNEL in "${CHANNELS[@]}"; do
+            echo "🔍 جلب فيديوهات من قناة: $CHANNEL"
+            # جلب آخر 20 فيديو من القناة (مع تجاهل الأخطاء)
+            yt-dlp "ytsearch20:${CHANNEL}" --dump-json --flat-playlist 2>/dev/null | \
+              jq -c '{videoId: .id, title: .title, channel: (.channel // .uploader // $CHANNEL), thumbnails: {medium: {url: ("https://i.ytimg.com/vi/\(.id)/mqdefault.jpg")}}}' --arg CHANNEL "$CHANNEL" >> temp.json
+            echo "" >> temp.json
           done
 
-          # تنظيف وبناء الملف النهائي
+          # تنظيف البيانات وإزالة التكرارات
           jq -s '
             {
               videos: [
@@ -102,17 +61,17 @@ jobs:
                 }
               ] | unique_by(.videoId)
             }
-          ' temp_all.json > data/videos.json
+          ' temp.json > data/videos.json
 
-          rm -f temp_all.json
-
+          rm temp.json
+          
           COUNT=$(jq '.videos | length' data/videos.json)
-          echo "✅ تم جلب ${COUNT} فيديو فريد"
+          echo "✅ تم جلب ${COUNT} فيديو حلال"
 
       - name: حفظ التغييرات
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
           git add data/videos.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "🔥 تحديث ضخم للفيديوهات $(date)"
+          git diff --quiet && git diff --staged --quiet || git commit -m "🔥 تحديث مكتبة الفيديوهات $(date)"
           git push
