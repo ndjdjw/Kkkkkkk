@@ -8,438 +8,124 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * { margin:0; padding:0; box-sizing:border-box; font-family:'Tajawal', sans-serif; }
-        body { background:#f8fafc; color:#1e293b; }
-        .container { max-width:1280px; margin:0 auto; padding:0 20px; }
-        
-        .header {
-            background: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 15px 0;
-        }
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .logo-icon {
-            background: linear-gradient(135deg, #10b981, #059669);
-            color: white;
-            width: 48px;
-            height: 48px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-        }
-        .logo-text h1 {
-            font-size: 26px;
-            font-weight: 900;
-            background: linear-gradient(135deg, #1e293b, #334155);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .nav-links a {
-            color: #475569;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        .nav-links a.active {
-            color: #10b981;
-            font-weight: 700;
-        }
-        .btn {
-            background: #10b981;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: 0.3s;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-        }
-        .btn:hover {
-            background: #059669;
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px #10b98180;
-        }
-
-        .hero-search {
-            background: linear-gradient(135deg, #ffffff, #f1f5f9);
-            border-radius: 48px;
-            padding: 60px 40px;
-            margin: 40px 0;
-            text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
-        }
-        .hero-search h1 {
-            font-size: 48px;
-            font-weight: 900;
-            margin-bottom: 20px;
-        }
-        .hero-search p {
-            color: #64748b;
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-        .search-box {
-            display: flex;
-            gap: 15px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .search-box input {
-            flex: 1;
-            padding: 18px 25px;
-            border: 2px solid #e2e8f0;
-            border-radius: 60px;
-            font-size: 18px;
-        }
-        .search-box input:focus {
-            outline: none;
-            border-color: #10b981;
-            box-shadow: 0 0 0 3px #10b98120;
-        }
-        .search-box button {
-            background: #10b981;
-            color: white;
-            border: none;
-            border-radius: 60px;
-            padding: 18px 45px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .search-box button:hover {
-            background: #059669;
-            transform: scale(1.05);
-        }
-
-        .suggestions {
-            background: white;
-            border-radius: 30px;
-            padding: 30px;
-            margin: 40px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-        .suggestions h3 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .suggestions-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
-        .chip {
-            background: #f1f5f9;
-            color: #1e293b;
-            padding: 12px 25px;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .chip:hover {
-            background: #10b981;
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .stats {
-            background: white;
-            border-radius: 20px;
-            padding: 20px;
-            margin: 30px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        .count {
-            font-size: 18px;
-            font-weight: 700;
-            color: #1e293b;
-        }
-        .badge {
-            background: #10b981;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 500;
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
-        }
-        .video-card {
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-            border: 1px solid #eef2f6;
-            cursor: pointer;
-        }
-        .video-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 60px -15px #10b98180;
-        }
-        .video-thumb {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        .video-info {
-            padding: 20px;
-        }
-        .video-title {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #1e293b;
-        }
-        .video-channel {
-            color: #64748b;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-        .video-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .watch-btn {
-            background: #10b981;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-        .watch-btn:hover {
-            background: #059669;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 60px;
-            grid-column: 1/-1;
-        }
-        .spinner {
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #10b981;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-        .footer {
-            background: #1e293b;
-            color: #cbd5e1;
-            padding: 40px 0;
-            margin-top: 60px;
-            border-radius: 40px 40px 0 0;
-            text-align: center;
-        }
+        body { background:#f8fafc; padding:20px; }
+        .container { max-width:1200px; margin:0 auto; }
+        .header { background:white; padding:20px; border-radius:20px; margin-bottom:30px; display:flex; justify-content:space-between; align-items:center; }
+        .logo h2 { color:#10b981; }
+        .nav-links a { text-decoration:none; margin:0 15px; color:#333; }
+        .search-box { display:flex; gap:10px; margin:30px 0; }
+        .search-box input { flex:1; padding:15px; border-radius:50px; border:2px solid #e2e8f0; font-size:16px; }
+        .search-box button { background:#10b981; color:white; border:none; padding:15px 30px; border-radius:50px; cursor:pointer; font-weight:bold; }
+        .suggestions { display:flex; flex-wrap:wrap; gap:10px; margin:20px 0; }
+        .chip { background:#f1f5f9; padding:10px 20px; border-radius:50px; cursor:pointer; transition:0.3s; }
+        .chip:hover { background:#10b981; color:white; }
+        .results { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; margin-top:30px; }
+        .video-card { background:white; border-radius:15px; overflow:hidden; cursor:pointer; transition:0.3s; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+        .video-card:hover { transform:translateY(-5px); box-shadow:0 10px 25px -5px #10b981; }
+        .video-thumb { width:100%; height:180px; object-fit:cover; }
+        .video-info { padding:15px; }
+        .video-title { font-size:16px; font-weight:bold; margin-bottom:8px; }
+        .video-channel { color:#666; font-size:14px; }
+        .footer { text-align:center; margin-top:40px; color:#666; }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="container header-content">
-            <div class="logo">
-                <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
-                <div class="logo-text"><h1>أكاديمية زاد</h1></div>
-            </div>
+    <div class="container">
+        <div class="header">
+            <div class="logo"><h2>📚 أكاديمية زاد</h2></div>
             <div class="nav-links">
                 <a href="index.html">الرئيسية</a>
-                <a href="search.html" class="active">الدورات</a>
+                <a href="search.html">البحث</a>
             </div>
-            <a href="search.html" class="btn"><i class="fas fa-search"></i> ابحث</a>
         </div>
-    </div>
 
-    <div class="container">
-        <div class="hero-search">
-            <h1>🔍 ابحث عن دورتك المفضلة</h1>
-            <p>أكثر من 500 فيديو تعليمي في الذكاء الاصطناعي، البرمجة، الأمن السيبراني والمزيد</p>
+        <div style="background:white; padding:30px; border-radius:20px; text-align:center;">
+            <h1>🔍 ابحث عن دورتك</h1>
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="اكتب كلمة البحث (مثال: Python, ذكاء اصطناعي, أمن سيبراني)" onkeypress="if(event.key === 'Enter') searchVideos()">
-                <button onclick="searchVideos()" id="searchBtn">بحث</button>
+                <input type="text" id="searchInput" placeholder="اكتب كلمة البحث...">
+                <button onclick="searchVideos()">بحث</button>
             </div>
         </div>
 
-        <div class="suggestions">
-            <h3><i class="fas fa-lightbulb"></i> اقتراحات البحث الأكثر طلباً</h3>
-            <div class="suggestions-grid" id="suggestionsGrid"></div>
-        </div>
-
-        <div id="stats" style="display: none;" class="stats">
-            <span class="count" id="resultCount"></span>
-            <span class="badge"><i class="fas fa-check-circle"></i> نتائج حلال 100%</span>
-        </div>
-
-        <div class="results-grid" id="results">
-            <div class="loading">
-                <div class="spinner"></div>
-                <p>اكتب كلمة البحث وستظهر النتائج هنا</p>
-            </div>
-        </div>
+        <div class="suggestions" id="suggestions"></div>
+        <div class="results" id="results"></div>
+        <div class="footer">جميع الفيديوهات من قنوات تعليمية موثوقة</div>
     </div>
-
-    <footer class="footer">
-        <p>© 2026 أكاديمية زاد – جميع الحقوق محفوظة</p>
-    </footer>
 
     <script>
-        // قائمة الاقتراحات
-        const SUGGESTIONS = [
-            "Python", "JavaScript", "ذكاء اصطناعي", "أمن سيبراني", "تحليل بيانات",
-            "تسويق رقمي", "تعلم الآلة", "اختراق أخلاقي", "تطوير تطبيقات", "شبكات",
-            "بايثون", "Data Science", "Machine Learning", "Cybersecurity", "AI"
-        ];
-
-        let videosData = [];
-        let isLoading = false;
+        const SUGGESTIONS = ["Python", "JavaScript", "ذكاء اصطناعي", "أمن سيبراني", "تحليل بيانات", "تسويق رقمي", "تعلم الآلة", "اختراق أخلاقي", "تطوير تطبيقات", "شبكات", "بايثون", "Data Science", "Machine Learning", "Cybersecurity", "AI"];
+        
+        let videos = [];
 
         // عرض الاقتراحات
-        function displaySuggestions() {
-            const grid = document.getElementById('suggestionsGrid');
-            grid.innerHTML = '';
+        function showSuggestions() {
+            let html = '';
             SUGGESTIONS.forEach(word => {
-                const chip = document.createElement('div');
-                chip.className = 'chip';
-                chip.textContent = word;
-                chip.onclick = () => {
-                    document.getElementById('searchInput').value = word;
-                    searchVideos();
-                };
-                grid.appendChild(chip);
+                html += `<div class="chip" onclick="searchWord('${word}')">${word}</div>`;
             });
+            document.getElementById('suggestions').innerHTML = html;
         }
 
-        // تحميل ملف الفيديوهات (استخدام الرابط المباشر)
+        function searchWord(word) {
+            document.getElementById('searchInput').value = word;
+            searchVideos();
+        }
+
+        // تحميل الفيديوهات
         async function loadVideos() {
             try {
-                // الرابط المباشر للملف (raw)
-                const response = await fetch('https://raw.githubusercontent.com/ndjdjw/Kkkkkkk/main/data/videos.json');
-                if (!response.ok) throw new Error(`فشل التحميل (${response.status})`);
+                const response = await fetch('/data/videos.json');
                 const data = await response.json();
-                videosData = data.videos || [];
-                console.log(`✅ تم تحميل ${videosData.length} فيديو`);
+                videos = data.videos || [];
+                console.log('✅ تم تحميل', videos.length, 'فيديو');
                 return true;
-            } catch (error) {
-                console.error('خطأ في تحميل الفيديوهات:', error);
-                // عرض رسالة خطأ للمستخدم
-                document.getElementById('results').innerHTML = `
-                    <div style="grid-column:1/-1; text-align:center; padding:60px; background:white; border-radius:30px;">
-                        <i class="fas fa-exclamation-triangle" style="font-size:50px; color:#ef4444;"></i>
-                        <h3 style="margin:20px 0;">خطأ في تحميل الفيديوهات</h3>
-                        <p style="color:#64748b;">تأكد من وجود ملف البيانات أو أعد المحاولة لاحقاً.</p>
-                    </div>
-                `;
+            } catch(e) {
+                console.error('خطأ:', e);
                 return false;
             }
         }
 
-        // وظيفة البحث
+        // البحث
         async function searchVideos() {
             const query = document.getElementById('searchInput').value.trim().toLowerCase();
             const resultsDiv = document.getElementById('results');
-            const statsDiv = document.getElementById('stats');
-            const resultCount = document.getElementById('resultCount');
-            const searchBtn = document.getElementById('searchBtn');
-
+            
             if (!query) {
-                alert('الرجاء إدخال كلمة البحث');
+                alert('اكتب كلمة البحث');
                 return;
             }
 
-            if (isLoading) return;
-            isLoading = true;
+            resultsDiv.innerHTML = '<div style="text-align:center;">جاري البحث...</div>';
             
-            searchBtn.disabled = true;
-            searchBtn.textContent = 'جاري البحث...';
-            resultsDiv.innerHTML = `<div class="loading"><div class="spinner"></div><p>جاري البحث عن "${query}"...</p></div>`;
-
-            // تحميل الفيديوهات إذا لم تكن محملة
-            if (videosData.length === 0) {
+            if (videos.length === 0) {
                 await loadVideos();
             }
 
-            // فلترة النتائج
-            const filtered = videosData.filter(v => 
-                v.title && v.title.toLowerCase().includes(query)
-            );
-
-            if (filtered.length > 0) {
-                let html = '';
-                filtered.slice(0, 30).forEach(v => {
-                    html += `
-                        <div class="video-card" onclick="window.open('https://youtube.com/watch?v=${v.videoId}', '_blank')">
-                            <img src="${v.thumbnails?.medium?.url || 'https://via.placeholder.com/320x180/1e3c32/ffffff?text=فيديو'}" class="video-thumb" alt="${v.title}">
-                            <div class="video-info">
-                                <div class="video-title">${v.title}</div>
-                                <div class="video-channel"><i class="fas fa-user"></i> ${v.channel || 'قناة تعليمية'}</div>
-                                <div class="video-footer">
-                                    <span class="watch-btn"><i class="fab fa-youtube"></i> مشاهدة</span>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                });
-                resultsDiv.innerHTML = html;
-                statsDiv.style.display = 'flex';
-                resultCount.textContent = `${filtered.length} نتيجة لـ "${query}"`;
-            } else {
-                resultsDiv.innerHTML = `
-                    <div style="grid-column:1/-1; text-align:center; padding:60px; background:white; border-radius:30px;">
-                        <i class="fas fa-exclamation-circle" style="font-size:50px; color:#94a3b8;"></i>
-                        <h3 style="margin:20px 0;">لا توجد نتائج لـ "${query}"</h3>
-                        <p style="color:#64748b;">جرب كلمة أخرى من الاقتراحات</p>
-                    </div>
-                `;
-                statsDiv.style.display = 'none';
+            const filtered = videos.filter(v => v.title && v.title.toLowerCase().includes(query));
+            
+            if (filtered.length === 0) {
+                resultsDiv.innerHTML = '<div style="text-align:center;">❌ لا توجد نتائج</div>';
+                return;
             }
 
-            searchBtn.disabled = false;
-            searchBtn.textContent = 'بحث';
-            isLoading = false;
+            let html = '';
+            filtered.slice(0, 30).forEach(v => {
+                html += `
+                    <div class="video-card" onclick="window.open('https://youtube.com/watch?v=${v.videoId}', '_blank')">
+                        <img class="video-thumb" src="${v.thumbnails?.medium?.url || 'https://via.placeholder.com/320x180'}" onerror="this.src='https://via.placeholder.com/320x180'">
+                        <div class="video-info">
+                            <div class="video-title">${v.title}</div>
+                            <div class="video-channel">${v.channel || 'قناة'}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            resultsDiv.innerHTML = html;
         }
 
-        // تحميل الاقتراحات عند بدء الصفحة
-        window.onload = () => {
-            displaySuggestions();
-            // تحميل الفيديوهات مسبقاً
-            loadVideos();
-        };
+        // بدء التشغيل
+        showSuggestions();
+        loadVideos();
     </script>
 </body>
 </html>
