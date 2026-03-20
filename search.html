@@ -2,95 +2,67 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مكتبة الدورات | أكاديمية زاد</title>
-    <!-- نفس روابط الخطوط والأيقونات -->
+    <title>مكتبة الدورات – أكاديمية زاد</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
-        body { background: #f8fafc; color: #1e293b; padding: 20px; }
-        .container { max-width: 1400px; margin: 0 auto; }
-        /* إعادة استخدام أنماط الهيدر والفوتر من index.html (يمكنك نسخها) */
-        /* ... (لنختصر) ... */
-        .header { background: white; padding: 20px; border-radius: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
-        .logo h2 { color: #1e3c32; margin: 0; }
-        .nav-links a { color: #333; text-decoration: none; margin: 0 15px; }
-        .nav-links a.active { color: #10b981; font-weight: bold; }
-        .search-section { background: white; border-radius: 30px; padding: 40px; margin-bottom: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .search-section h1 { color: #1e293b; font-size: 40px; }
-        .search-box { display: flex; gap: 10px; max-width: 700px; margin: 30px auto; }
-        .search-box input { flex: 1; padding: 20px; border: 2px solid #e2e8f0; border-radius: 50px; font-size: 18px; }
-        .search-box input:focus { outline: none; border-color: #10b981; }
-        .search-box button { background: #10b981; color: white; border: none; border-radius: 50px; padding: 20px 50px; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .search-box button:hover { background: #059669; }
-        .suggestions { background: white; border-radius: 25px; padding: 30px; margin-bottom: 30px; }
-        .suggestions-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
-        .chip { background: #f1f5f9; color: #1e293b; padding: 12px 25px; border-radius: 50px; cursor: pointer; transition: 0.3s; }
-        .chip:hover { background: #10b981; color: white; }
-        .results-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
-        .video-card { background: white; border-radius: 20px; overflow: hidden; transition: 0.3s; }
-        .video-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -15px #10b981; }
-        .video-thumb { width: 100%; height: 200px; object-fit: cover; }
-        .video-info { padding: 20px; }
-        .video-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
-        .watch-btn { display: block; background: #10b981; color: white; text-align: center; padding: 12px; border-radius: 30px; text-decoration: none; }
-        .footer { text-align: center; margin-top: 50px; color: #64748b; }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Tajawal', sans-serif; }
+        body { background:#f8fafc; padding:20px; }
+        .header { background:white; padding:20px; border-radius:20px; margin-bottom:30px; display:flex; justify-content:space-between; }
+        .logo h2 { color:#10b981; }
+        .search-section { background:white; border-radius:30px; padding:40px; text-align:center; margin-bottom:30px; }
+        .search-box { display:flex; gap:10px; max-width:600px; margin:20px auto; }
+        .search-box input { flex:1; padding:15px; border-radius:50px; border:2px solid #e2e8f0; }
+        .search-box button { background:#10b981; color:white; border:none; padding:15px 40px; border-radius:50px; cursor:pointer; }
+        .suggestions { background:white; border-radius:20px; padding:20px; margin-bottom:30px; }
+        .suggestions-grid { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+        .chip { background:#f1f5f9; padding:10px 20px; border-radius:50px; cursor:pointer; }
+        .chip:hover { background:#10b981; color:white; }
+        .results-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; }
+        .video-card { background:white; border-radius:15px; overflow:hidden; box-shadow:0 5px 10px rgba(0,0,0,0.05); }
+        .video-thumb { width:100%; height:160px; background:#cbd5e1; }
+        .video-info { padding:15px; }
+        .watch-btn { display:block; background:#10b981; color:white; text-align:center; padding:10px; border-radius:25px; text-decoration:none; margin-top:10px; }
+        .footer { text-align:center; margin-top:40px; color:#64748b; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo"><h2><i class="fas fa-graduation-cap"></i> أكاديمية زاد</h2></div>
-            <div class="nav-links">
-                <a href="index.html">الرئيسية</a>
-                <a href="search.html" class="active">الدورات</a>
-            </div>
-        </div>
+    <div class="header">
+        <div class="logo"><h2><i class="fas fa-graduation-cap"></i> أكاديمية زاد</h2></div>
+        <div><a href="index.html">الرئيسية</a> | <a href="search.html">الدورات</a></div>
+    </div>
 
-        <div class="search-section">
-            <h1>🔍 ابحث عن دورتك المفضلة</h1>
-            <p>أكثر من 500 فيديو تعليمي في مختلف المجالات التقنية</p>
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="اكتب كلمة البحث (مثال: ذكاء اصطناعي، بايثون، أمن سيبراني)" onkeypress="if(event.key === 'Enter') searchVideos()">
-                <button onclick="searchVideos()" id="searchBtn">بحث</button>
-            </div>
-        </div>
-
-        <div class="suggestions">
-            <h3 style="text-align: center; margin-bottom: 20px;">اقتراحات البحث الأكثر طلباً</h3>
-            <div class="suggestions-grid" id="suggestionsGrid"></div>
-        </div>
-
-        <div class="stats" id="stats" style="display: none; justify-content: space-between; background: white; padding: 20px; border-radius: 20px; margin-bottom: 30px;">
-            <span class="count" id="resultCount"></span>
-            <span class="badge">محتوى حلال 100%</span>
-        </div>
-
-        <div class="results-grid" id="results">
-            <div style="grid-column: 1/-1; text-align: center; padding: 60px;">اكتب كلمة البحث وستظهر النتائج هنا</div>
-        </div>
-
-        <div class="footer">
-            <p>جميع الفيديوهات من قنوات تعليمية موثوقة ومرخصة</p>
+    <div class="search-section">
+        <h1>🔍 ابحث عن دورتك</h1>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="اكتب كلمة البحث...">
+            <button onclick="searchVideos()" id="searchBtn">بحث</button>
         </div>
     </div>
 
+    <div class="suggestions" id="suggestionsSection">
+        <h3 style="text-align:center; margin-bottom:20px;">اقتراحات البحث الأكثر طلباً</h3>
+        <div class="suggestions-grid" id="suggestionsGrid"></div>
+    </div>
+
+    <div class="results-grid" id="results">
+        <div style="grid-column:1/-1; text-align:center;">ابدأ البحث لترى النتائج</div>
+    </div>
+
+    <div class="footer">
+        <p>جميع الفيديوهات من قنوات تعليمية موثوقة – محتوى حلال 100%</p>
+    </div>
+
     <script>
-        // قائمة الكلمات البحثية الأكثر طلباً في 2026 (موافق للشرع)
         const SUGGESTIONS = [
-            "ذكاء اصطناعي", "تعلم الآلة", "أمن سيبراني", "اختراق أخلاقي",
-            "بايثون", "تحليل بيانات", "تسويق رقمي", "تطوير تطبيقات",
-            "شبكات", "قواعد بيانات", "حوسبة سحابية", "تمويل شخصي",
-            "AI", "Machine Learning", "Cybersecurity", "Python",
-            "Data Science", "Digital Marketing", "Cloud Computing"
+            "ذكاء اصطناعي", "أمن سيبراني", "بايثون", "تحليل بيانات", "تسويق رقمي",
+            "تعلم الآلة", "اختراق أخلاقي", "تطوير تطبيقات", "شبكات", "حوسبة سحابية"
         ];
 
         let videosData = [];
 
         function displaySuggestions() {
             const grid = document.getElementById('suggestionsGrid');
-            grid.innerHTML = '';
             SUGGESTIONS.forEach(word => {
                 const chip = document.createElement('div');
                 chip.className = 'chip';
@@ -105,60 +77,39 @@
 
         async function loadVideos() {
             try {
-                const response = await fetch('/data/videos.json');
-                if (!response.ok) throw new Error('فشل التحميل');
-                const data = await response.json();
+                const res = await fetch('/data/videos.json');
+                const data = await res.json();
                 videosData = data.videos || [];
-                console.log(`✅ تم تحميل ${videosData.length} فيديو`);
-            } catch (error) {
-                console.error('خطأ في تحميل الفيديوهات:', error);
-            }
+            } catch(e) { console.log('لا يوجد ملف فيديوهات بعد'); }
         }
 
         async function searchVideos() {
             const query = document.getElementById('searchInput').value.trim().toLowerCase();
-            if (!query) return alert('الرجاء إدخال كلمة البحث');
-            const resultsDiv = document.getElementById('results');
-            const statsDiv = document.getElementById('stats');
-            const resultCount = document.getElementById('resultCount');
-            const searchBtn = document.getElementById('searchBtn');
-
-            searchBtn.disabled = true;
-            searchBtn.textContent = 'جاري البحث...';
-            resultsDiv.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:60px;"><i class="fas fa-spinner fa-spin"></i> جاري البحث...</div>';
-
-            if (videosData.length === 0) await loadVideos();
-
+            if (!query) return;
+            document.getElementById('results').innerHTML = '<div style="grid-column:1/-1; text-align:center;">جاري البحث...</div>';
+            await loadVideos();
             const filtered = videosData.filter(v => v.title && v.title.toLowerCase().includes(query));
             if (filtered.length > 0) {
                 let html = '';
-                filtered.slice(0, 30).forEach(v => {
+                filtered.slice(0,20).forEach(v => {
                     html += `
                         <div class="video-card">
-                            <img src="${v.thumbnails?.medium?.url || 'https://via.placeholder.com/320x180/1e3c32/ffffff?text=فيديو'}" class="video-thumb">
+                            <div class="video-thumb" style="background-image:url(${v.thumbnails?.medium?.url || 'https://via.placeholder.com/320x180'}); background-size:cover;"></div>
                             <div class="video-info">
-                                <div class="video-title">${v.title}</div>
-                                <div class="video-channel">${v.channel || 'قناة تعليمية'}</div>
-                                <a href="https://youtube.com/watch?v=${v.videoId}" target="_blank" class="watch-btn"><i class="fab fa-youtube"></i> مشاهدة</a>
+                                <h4>${v.title}</h4>
+                                <p>${v.channel || 'قناة'}</p>
+                                <a href="https://youtube.com/watch?v=${v.videoId}" target="_blank" class="watch-btn">مشاهدة</a>
                             </div>
                         </div>
                     `;
                 });
-                resultsDiv.innerHTML = html;
-                statsDiv.style.display = 'flex';
-                resultCount.textContent = `${filtered.length} نتيجة لـ "${query}"`;
+                document.getElementById('results').innerHTML = html;
             } else {
-                resultsDiv.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:60px;">لا توجد نتائج. جرب كلمة أخرى.</div>';
-                statsDiv.style.display = 'none';
+                document.getElementById('results').innerHTML = '<div style="grid-column:1/-1; text-align:center;">لا توجد نتائج</div>';
             }
-            searchBtn.disabled = false;
-            searchBtn.textContent = 'بحث';
         }
 
-        window.addEventListener('load', () => {
-            displaySuggestions();
-            loadVideos();
-        });
+        window.onload = displaySuggestions;
     </script>
 </body>
 </html>
