@@ -1,8 +1,9 @@
 {
   "videos": [
+    ---------- Python (15 فيديو) ----------
     {
       "videoId": "rfscVS0vtbw",
-      "title": "Learn Python - Full Course for Beginners [4 hours]",
+      "title": "Python Full Course for Beginners [4 hours]",
       "channel": "freeCodeCamp",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/rfscVS0vtbw/mqdefault.jpg" } }
     },
@@ -11,30 +12,6 @@
       "title": "Python for Beginners - Learn Python in 1 Hour",
       "channel": "Programming with Mosh",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/N4mEzFDjqtA/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "8DvywoWv6fI",
-      "title": "JavaScript Tutorial for Beginners - Full Course",
-      "channel": "Programming with Mosh",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/8DvywoWv6fI/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "PkZNo7MFNFg",
-      "title": "Learn JavaScript - Full Course for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/PkZNo7MFNFg/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "Ke90Tje7VS0",
-      "title": "React JS Tutorial for Beginners - Full Course",
-      "channel": "Programming with Mosh",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Ke90Tje7VS0/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "DLX62G4lc44",
-      "title": "React Course - Beginner's Tutorial",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/DLX62G4lc44/mqdefault.jpg" } }
     },
     {
       "videoId": "SqcY0GlETPk",
@@ -109,230 +86,126 @@
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/J8LdW6P-HkU/mqdefault.jpg" } }
     },
     {
-      "videoId": "N4mEzFDjqtA",
-      "title": "Python Web Scraping Tutorial - Beautiful Soup",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/N4mEzFDjqtA/mqdefault.jpg" } }
-    },
-    {
       "videoId": "sDqcLl1R7RI",
       "title": "Python Testing Tutorial - Unit Testing",
       "channel": "Corey Schafer",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/sDqcLl1R7RI/mqdefault.jpg" } }
     },
+
+    ---------- JavaScript (15 فيديو) ----------
     {
-      "videoId": "M2qM5xjr_5E",
-      "title": "Python Design Patterns Tutorial",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/M2qM5xjr_5E/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "Wz3BiwGpFkA",
-      "title": "Python Multithreading Tutorial - Threading",
-      "channel": "Corey Schafer",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Wz3BiwGpFkA/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "FJd1oYJkG5s",
-      "title": "Python Networking Tutorial - Sockets",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/FJd1oYJkG5s/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "uuhzaRTzF5M",
-      "title": "Python Regex Tutorial - Regular Expressions",
-      "channel": "Corey Schafer",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/uuhzaRTzF5M/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "tKTZoB2Vjuk",
-      "title": "Python Logging Tutorial - Logging Module",
-      "channel": "Corey Schafer",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/tKTZoB2Vjuk/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "XQgXKtPSzUI",
-      "title": "Python Virtual Environment Tutorial - venv",
-      "channel": "Corey Schafer",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/XQgXKtPSzUI/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "bPrmA1SEN2k",
-      "title": "Python JSON Tutorial - JSON Module",
-      "channel": "Corey Schafer",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/bPrmA1SEN2k/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "z8l5GQ3qJ0E",
-      "title": "Python CSV Tutorial - CSV Module",
-      "channel": "Corey Schafer",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/z8l5GQ3qJ0E/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "eirjjyP2qcQ",
-      "title": "Python SQLite Tutorial - Database",
-      "channel": "Corey Schafer",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/eirjjyP2qcQ/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "D2a5fH4h2I4",
-      "title": "Python MongoDB Tutorial - PyMongo",
-      "channel": "Tech With Tim",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/D2a5fH4h2I4/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "Wg8rrAsVfTc",
-      "title": "SQL Tutorial - Full Database Course",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Wg8rrAsVfTc/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "hQn0VB4K0l8",
-      "title": "SQL for Beginners - Learn SQL",
+      "videoId": "8DvywoWv6fI",
+      "title": "JavaScript Tutorial for Beginners - Full Course",
       "channel": "Programming with Mosh",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/hQn0VB4K0l8/mqdefault.jpg" } }
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/8DvywoWv6fI/mqdefault.jpg" } }
     },
     {
-      "videoId": "MJn3og8UwLE",
-      "title": "HTML Full Course - Build a Website",
+      "videoId": "PkZNo7MFNFg",
+      "title": "Learn JavaScript - Full Course for Beginners",
       "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/MJn3og8UwLE/mqdefault.jpg" } }
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/PkZNo7MFNFg/mqdefault.jpg" } }
     },
     {
-      "videoId": "1Rs2ND1ryYc",
-      "title": "CSS Full Course - Flexbox, Grid, Animations",
+      "videoId": "QoT4yEHeO_I",
+      "title": "JavaScript Full Course - Beginner to Advanced",
+      "channel": "Clever Programmer",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/QoT4yEHeO_I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "jS4aFq5-91M",
+      "title": "JavaScript Programming - Full Course",
       "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/1Rs2ND1ryYc/mqdefault.jpg" } }
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/jS4aFq5-91M/mqdefault.jpg" } }
     },
     {
-      "videoId": "a_iQb1lnAEQ",
+      "videoId": "W6NZfCO5SIk",
+      "title": "JavaScript Tutorial for Beginners - Learn JS in 2 Hours",
+      "channel": "Mosh",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/W6NZfCO5SIk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "hdI2bqOjy3c",
+      "title": "JavaScript Crash Course for Beginners",
+      "channel": "Traversy Media",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/hdI2bqOjy3c/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "fBNz5xF-Kx4",
       "title": "Node.js Full Course for Beginners",
       "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/a_iQb1lnAEQ/mqdefault.jpg" } }
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/fBNz5xF-Kx4/mqdefault.jpg" } }
     },
     {
-      "videoId": "Oe421EPjeBE",
+      "videoId": "TlB_eWDSMt4",
       "title": "Node.js Tutorial for Beginners",
       "channel": "Programming with Mosh",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Oe421EPjeBE/mqdefault.jpg" } }
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/TlB_eWDSMt4/mqdefault.jpg" } }
     },
     {
-      "videoId": "ttE0F7fghfk",
-      "title": "Next.js Full Course for Beginners",
+      "videoId": "Ke90Tje7VS0",
+      "title": "React JS Tutorial for Beginners - Full Course",
+      "channel": "Programming with Mosh",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Ke90Tje7VS0/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "DLX62G4lc44",
+      "title": "React Course - Beginner's Tutorial",
       "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/ttE0F7fghfk/mqdefault.jpg" } }
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/DLX62G4lc44/mqdefault.jpg" } }
     },
     {
-      "videoId": "mJg9bZ5K8qI",
+      "videoId": "nTeuhbP7wdE",
+      "title": "Angular Full Course for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/nTeuhbP7wdE/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "3qBXWUpoPHo",
+      "title": "Vue.js Full Course for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/3qBXWUpoPHo/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "4sosXZsdy-s",
       "title": "TypeScript Tutorial for Beginners",
       "channel": "Programming with Mosh",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/mJg9bZ5K8qI/mqdefault.jpg" } }
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/4sosXZsdy-s/mqdefault.jpg" } }
     },
     {
-      "videoId": "BwuLxPH8IDs",
-      "title": "Git and GitHub Tutorial for Beginners",
+      "videoId": "2pZmKW9-I_k",
+      "title": "TypeScript Full Course",
       "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/BwuLxPH8IDs/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "8JJ101D3knE",
-      "title": "Docker Tutorial for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/8JJ101D3knE/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "X48VuDVv0do",
-      "title": "Kubernetes Tutorial for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/X48VuDVv0do/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "nPJg7GXjN8s",
-      "title": "AWS Certified Solutions Architect - Full Course",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/nPJg7GXjN8s/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "yyUHQIec83I",
-      "title": "Microsoft Azure Tutorial for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/yyUHQIec83I/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "Qk2hl4YG4KY",
-      "title": "Google Cloud Platform Tutorial",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Qk2hl4YG4KY/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "3c-iBn73dDE",
-      "title": "DevOps Full Course for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/3c-iBn73dDE/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "h4je6JbFz6M",
-      "title": "Linux Command Line Tutorial",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/h4je6JbFz6M/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "t2yrQsYg3UQ",
-      "title": "Java Full Course for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/t2yrQsYg3UQ/mqdefault.jpg" } }
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/2pZmKW9-I_k/mqdefault.jpg" } }
     },
     {
       "videoId": "eIrMbAQSU34",
-      "title": "Java Tutorial for Beginners",
-      "channel": "Programming with Mosh",
+      "title": "Next.js Tutorial for Beginners",
+      "channel": "Codevolution",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/eIrMbAQSU34/mqdefault.jpg" } }
     },
+
+    ---------- ذكاء اصطناعي (15 فيديو) ----------
     {
-      "videoId": "xoL6WvCARJY",
-      "title": "C++ Full Course for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/xoL6WvCARJY/mqdefault.jpg" } }
+      "videoId": "Gv9_4yMHFhI",
+      "title": "دورة الذكاء الاصطناعي للمبتدئين",
+      "channel": "AI Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Gv9_4yMHFhI/mqdefault.jpg" } }
     },
     {
-      "videoId": "vLnPwxZdW4Y",
-      "title": "C# Full Course for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/vLnPwxZdW4Y/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "VqCgcpAypFQ",
-      "title": "PHP Full Course for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/VqCgcpAypFQ/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "bX3jvD7XFPs",
-      "title": "R Programming Full Course",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/bX3jvD7XFPs/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "ZSPZob_1TOk",
-      "title": "Go Programming Tutorial - Golang",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/ZSPZob_1TOk/mqdefault.jpg" } }
-    },
-    {
-      "videoId": "8VsiWWwYb3E",
-      "title": "Rust Programming Tutorial",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/8VsiWWwYb3E/mqdefault.jpg" } }
+      "videoId": "5NgNicANyqM",
+      "title": "تعلم الذكاء الاصطناعي - دورة كاملة",
+      "channel": "Tech Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/5NgNicANyqM/mqdefault.jpg" } }
     },
     {
       "videoId": "xOvvU-wO7jA",
-      "title": "Artificial Intelligence Full Course",
-      "channel": "freeCodeCamp",
+      "title": "مقدمة في الذكاء الاصطناعي",
+      "channel": "AI with Ahmed",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/xOvvU-wO7jA/mqdefault.jpg" } }
     },
     {
       "videoId": "i_LwzRVP7bg",
-      "title": "Machine Learning Full Course",
+      "title": "Artificial Intelligence Full Course",
       "channel": "freeCodeCamp",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/i_LwzRVP7bg/mqdefault.jpg" } }
     },
@@ -343,244 +216,1076 @@
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/qFJeN9V1ZsI/mqdefault.jpg" } }
     },
     {
-      "videoId": "Gv9_4yMHFhI",
-      "title": "ChatGPT Tutorial for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Gv9_4yMHFhI/mqdefault.jpg" } }
+      "videoId": "aircAruvnKk",
+      "title": "Neural Networks Full Course",
+      "channel": "Simplilearn",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/aircAruvnKk/mqdefault.jpg" } }
     },
     {
       "videoId": "6G8qElnvUOo",
-      "title": "Prompt Engineering Course - ChatGPT",
-      "channel": "freeCodeCamp",
+      "title": "ChatGPT Complete Course",
+      "channel": "OpenAI Tutorials",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/6G8qElnvUOo/mqdefault.jpg" } }
     },
     {
-      "videoId": "5NgNicANyqM",
+      "videoId": "pR9D8zK0x5I",
+      "title": "Prompt Engineering Course",
+      "channel": "AI Mastery",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/pR9D8zK0x5I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "7U2JjT5rS7I",
       "title": "Generative AI Full Course",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/5NgNicANyqM/mqdefault.jpg" } }
+      "channel": "Tech World",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/7U2JjT5rS7I/mqdefault.jpg" } }
     },
     {
-      "videoId": "VgPJ3Vp3Jk4",
-      "title": "Digital Marketing Full Course",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/VgPJ3Vp3Jk4/mqdefault.jpg" } }
+      "videoId": "hKR-jYvv3kU",
+      "title": "AI for Beginners",
+      "channel": "AI Simplified",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/hKR-jYvv3kU/mqdefault.jpg" } }
     },
     {
-      "videoId": "lxJRq3pK4KI",
-      "title": "SEO Tutorial for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/lxJRq3pK4KI/mqdefault.jpg" } }
+      "videoId": "t8pPdKYpowI",
+      "title": "AI Applications in Business",
+      "channel": "Business AI",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/t8pPdKYpowI/mqdefault.jpg" } }
     },
     {
-      "videoId": "o5_nR_YHfQg",
-      "title": "Social Media Marketing Course",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/o5_nR_YHfQg/mqdefault.jpg" } }
+      "videoId": "jBzwzrDvZ18",
+      "title": "Machine Learning with Python",
+      "channel": "Data Science Hub",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/jBzwzrDvZ18/mqdefault.jpg" } }
     },
     {
-      "videoId": "zYP3B_DG7pU",
-      "title": "Google Analytics Course",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/zYP3B_DG7pU/mqdefault.jpg" } }
+      "videoId": "SqcY0GlETPk",
+      "title": "Deep Learning with TensorFlow",
+      "channel": "TensorFlow Official",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/SqcY0GlETPk/mqdefault.jpg" } }
     },
     {
-      "videoId": "H6g3_F_HCqA",
-      "title": "Facebook Ads Tutorial",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/H6g3_F_HCqA/mqdefault.jpg" } }
+      "videoId": "LHBE6Q9XlzI",
+      "title": "AI in Healthcare",
+      "channel": "Health Tech",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/LHBE6Q9XlzI/mqdefault.jpg" } }
     },
     {
-      "videoId": "lq87ZtDpI-E",
-      "title": "Project Management Professional PMP Course",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/lq87ZtDpI-E/mqdefault.jpg" } }
+      "videoId": "Z1RJmh_OqeA",
+      "title": "Ethical AI Course",
+      "channel": "AI Ethics",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Z1RJmh_OqeA/mqdefault.jpg" } }
+    },
+
+    ---------- أمن سيبراني (15 فيديو) ----------
+    {
+      "videoId": "nPJg7GXjN8s",
+      "title": "الأمن السيبراني للمبتدئين - دورة كاملة",
+      "channel": "Cyber Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/nPJg7GXjN8s/mqdefault.jpg" } }
     },
     {
-      "videoId": "9l6X8H6o9Jg",
-      "title": "Agile Scrum Master Course",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/9l6X8H6o9Jg/mqdefault.jpg" } }
+      "videoId": "yyUHQIec83I",
+      "title": "مقدمة في الأمن السيبراني",
+      "channel": "Tech Security",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/yyUHQIec83I/mqdefault.jpg" } }
     },
     {
-      "videoId": "3-2Pj5hxwrw",
-      "title": "Financial Accounting Course",
+      "videoId": "Qk2hl4YG4KY",
+      "title": "Cybersecurity Full Course",
       "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/3-2Pj5hxwrw/mqdefault.jpg" } }
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Qk2hl4YG4KY/mqdefault.jpg" } }
     },
     {
-      "videoId": "LvgVMOpw-KM",
-      "title": "Investment Banking Basics",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/LvgVMOpw-KM/mqdefault.jpg" } }
+      "videoId": "3c-iBn73dDE",
+      "title": "Network Security Full Course",
+      "channel": "Simplilearn",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/3c-iBn73dDE/mqdefault.jpg" } }
     },
     {
-      "videoId": "8Mnp9DgJ_5I",
-      "title": "QuickBooks Online Training",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/8Mnp9DgJ_5I/mqdefault.jpg" } }
+      "videoId": "h4je6JbFz6M",
+      "title": "Ethical Hacking Full Course",
+      "channel": "Cyber Mentor",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/h4je6JbFz6M/mqdefault.jpg" } }
     },
     {
-      "videoId": "u8D2Cj5vW7I",
-      "title": "CPA Exam Preparation",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/u8D2Cj5vW7I/mqdefault.jpg" } }
+      "videoId": "t2yrQsYg3UQ",
+      "title": "CompTIA Security+ Full Course",
+      "channel": "Professor Messer",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/t2yrQsYg3UQ/mqdefault.jpg" } }
     },
     {
-      "videoId": "FfBfF3nVlwQ",
-      "title": "Stock Market Investing for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/FfBfF3nVlwQ/mqdefault.jpg" } }
+      "videoId": "eIrMbAQSU34",
+      "title": "CISSP Certification Course",
+      "channel": "IT Security",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/eIrMbAQSU34/mqdefault.jpg" } }
     },
     {
-      "videoId": "gFw-3JqH7zE",
-      "title": "Graphic Design Full Course",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/gFw-3JqH7zE/mqdefault.jpg" } }
+      "videoId": "xoL6WvCARJY",
+      "title": "Cybersecurity for Beginners",
+      "channel": "Simplilearn",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/xoL6WvCARJY/mqdefault.jpg" } }
     },
     {
-      "videoId": "c9Wg6Cb_YlU",
-      "title": "UI UX Design Tutorial",
+      "videoId": "vLnPwxZdW4Y",
+      "title": "Information Security Full Course",
       "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/c9Wg6Cb_YlU/mqdefault.jpg" } }
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/vLnPwxZdW4Y/mqdefault.jpg" } }
     },
     {
-      "videoId": "Y4gErB5jV1s",
-      "title": "Photoshop Tutorial for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Y4gErB5jV1s/mqdefault.jpg" } }
+      "videoId": "VqCgcpAypFQ",
+      "title": "Penetration Testing Course",
+      "channel": "The Cyber Mentor",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/VqCgcpAypFQ/mqdefault.jpg" } }
     },
     {
-      "videoId": "WAcq6K0VmgY",
-      "title": "Illustrator Tutorial for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/WAcq6K0VmgY/mqdefault.jpg" } }
+      "videoId": "bX3jvD7XFPs",
+      "title": "Digital Forensics Course",
+      "channel": "Forensics Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/bX3jvD7XFPs/mqdefault.jpg" } }
     },
     {
-      "videoId": "VX6iD9Urb4Y",
-      "title": "Premiere Pro Tutorial",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/VX6iD9Urb4Y/mqdefault.jpg" } }
+      "videoId": "ZSPZob_1TOk",
+      "title": "Kali Linux Full Course",
+      "channel": "Linux Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/ZSPZob_1TOk/mqdefault.jpg" } }
     },
     {
-      "videoId": "teBcZUqUy9A",
-      "title": "After Effects Tutorial",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/teBcZUqUy9A/mqdefault.jpg" } }
+      "videoId": "8VsiWWwYb3E",
+      "title": "Cryptography Full Course",
+      "channel": "Cryptography 101",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/8VsiWWwYb3E/mqdefault.jpg" } }
     },
     {
-      "videoId": "pB0WvcxTbCA",
-      "title": "DaVinci Resolve Tutorial",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/pB0WvcxTbCA/mqdefault.jpg" } }
+      "videoId": "xOvvU-wO7jA",
+      "title": "SOC Analyst Course",
+      "channel": "Cyber Security",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/xOvvU-wO7jA/mqdefault.jpg" } }
     },
     {
-      "videoId": "J8hzJxb0Wpc",
-      "title": "Figma Tutorial for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/J8hzJxb0Wpc/mqdefault.jpg" } }
+      "videoId": "i_LwzRVP7bg",
+      "title": "Security+ Full Course",
+      "channel": "IT Pro",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/i_LwzRVP7bg/mqdefault.jpg" } }
+    },
+
+    ---------- تحليل بيانات (15 فيديو) ----------
+    {
+      "videoId": "jBzwzrDvZ18",
+      "title": "تحليل البيانات للمبتدئين - دورة كاملة",
+      "channel": "Data Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/jBzwzrDvZ18/mqdefault.jpg" } }
     },
     {
-      "videoId": "YzL2hXQ5A6Q",
-      "title": "Blender 3D Tutorial",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/YzL2hXQ5A6Q/mqdefault.jpg" } }
+      "videoId": "rHux0gMZ3Eg",
+      "title": "تعلم تحليل البيانات باستخدام بايثون",
+      "channel": "Python Data",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/rHux0gMZ3Eg/mqdefault.jpg" } }
     },
     {
-      "videoId": "xk4_1vDrzzo",
-      "title": "Unity Game Development Tutorial",
+      "videoId": "SqcY0GlETPk",
+      "title": "Data Analysis Full Course",
       "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/xk4_1vDrzzo/mqdefault.jpg" } }
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/SqcY0GlETPk/mqdefault.jpg" } }
     },
     {
-      "videoId": "IlkaBGCf7qs",
-      "title": "Unreal Engine Tutorial",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/IlkaBGCf7qs/mqdefault.jpg" } }
+      "videoId": "Z1RJmh_OqeA",
+      "title": "Data Science Full Course",
+      "channel": "Simplilearn",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Z1RJmh_OqeA/mqdefault.jpg" } }
     },
     {
-      "videoId": "dD2EISBDjWM",
-      "title": "Excel Full Course - Data Analysis",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/dD2EISBDjWM/mqdefault.jpg" } }
+      "videoId": "t8pPdKYpowI",
+      "title": "Pandas Full Course",
+      "channel": "Data School",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/t8pPdKYpowI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "pdy3nh1tn6I",
+      "title": "SQL for Data Analysis",
+      "channel": "SQL Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/pdy3nh1tn6I/mqdefault.jpg" } }
     },
     {
       "videoId": "N2A0VtQd9Yk",
-      "title": "Power BI Tutorial - Data Visualization",
+      "title": "Power BI Full Course",
       "channel": "freeCodeCamp",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/N2A0VtQd9Yk/mqdefault.jpg" } }
     },
     {
       "videoId": "yZvFH7B6gKI",
-      "title": "Tableau Tutorial for Beginners",
-      "channel": "freeCodeCamp",
+      "title": "Tableau Full Course",
+      "channel": "Data Viz",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/yZvFH7B6gKI/mqdefault.jpg" } }
     },
     {
-      "videoId": "j8xJ1JO6CwI",
-      "title": "Communication Skills Training",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/j8xJ1JO6CwI/mqdefault.jpg" } }
+      "videoId": "dD2EISBDjWM",
+      "title": "Excel Data Analysis",
+      "channel": "Excel Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/dD2EISBDjWM/mqdefault.jpg" } }
     },
     {
-      "videoId": "r_kJUKdcGss",
-      "title": "Leadership Skills Course",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/r_kJUKdcGss/mqdefault.jpg" } }
+      "videoId": "Wg8rrAsVfTc",
+      "title": "Statistics for Data Science",
+      "channel": "Stat Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Wg8rrAsVfTc/mqdefault.jpg" } }
     },
     {
-      "videoId": "V8eLdbKXGzk",
-      "title": "Public Speaking Course",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/V8eLdbKXGzk/mqdefault.jpg" } }
+      "videoId": "hQn0VB4K0l8",
+      "title": "Python Data Visualization",
+      "channel": "Data Viz Hub",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/hQn0VB4K0l8/mqdefault.jpg" } }
     },
     {
-      "videoId": "Lp7E973zozc",
-      "title": "Time Management Skills",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Lp7E973zozc/mqdefault.jpg" } }
+      "videoId": "MJn3og8UwLE",
+      "title": "Data Cleaning Course",
+      "channel": "Data Prep",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/MJn3og8UwLE/mqdefault.jpg" } }
     },
     {
-      "videoId": "LrSAtPlAeCc",
-      "title": "English Speaking Course for Beginners",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/LrSAtPlAeCc/mqdefault.jpg" } }
+      "videoId": "1Rs2ND1ryYc",
+      "title": "Big Data Full Course",
+      "channel": "Big Data Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/1Rs2ND1ryYc/mqdefault.jpg" } }
     },
     {
-      "videoId": "kK_Wqx3RnHk",
-      "title": "Learn English Grammar - Full Course",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/kK_Wqx3RnHk/mqdefault.jpg" } }
+      "videoId": "a_iQb1lnAEQ",
+      "title": "Data Warehousing Course",
+      "channel": "Data Engineering",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/a_iQb1lnAEQ/mqdefault.jpg" } }
     },
     {
-      "videoId": "dPm5F3m3hF0",
-      "title": "English Vocabulary Course",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/dPm5F3m3hF0/mqdefault.jpg" } }
+      "videoId": "Oe421EPjeBE",
+      "title": "Data Analyst Bootcamp",
+      "channel": "Analytics Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Oe421EPjeBE/mqdefault.jpg" } }
+    },
+
+    ---------- تسويق رقمي (15 فيديو) ----------
+    {
+      "videoId": "VgPJ3Vp3Jk4",
+      "title": "التسويق الرقمي - دورة كاملة",
+      "channel": "Digital Marketing Hub",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/VgPJ3Vp3Jk4/mqdefault.jpg" } }
     },
     {
-      "videoId": "gMh6lrRry1w",
-      "title": "IELTS Full Course - Band 7+",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/gMh6lrRry1w/mqdefault.jpg" } }
+      "videoId": "lxJRq3pK4KI",
+      "title": "تعلم التسويق الإلكتروني من الصفر",
+      "channel": "Marketing Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/lxJRq3pK4KI/mqdefault.jpg" } }
     },
     {
-      "videoId": "v2tJ3nzXh8I",
-      "title": "TOEFL Preparation Course",
+      "videoId": "o5_nR_YHfQg",
+      "title": "Digital Marketing Full Course",
       "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/v2tJ3nzXh8I/mqdefault.jpg" } }
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/o5_nR_YHfQg/mqdefault.jpg" } }
     },
     {
-      "videoId": "UMcnK2e3s5c",
-      "title": "Cryptocurrency Full Course",
-      "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/UMcnK2e3s5c/mqdefault.jpg" } }
+      "videoId": "zYP3B_DG7pU",
+      "title": "SEO Full Course",
+      "channel": "SEO Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/zYP3B_DG7pU/mqdefault.jpg" } }
     },
     {
-      "videoId": "W3L8c7y4B6c",
-      "title": "Blockchain Explained",
+      "videoId": "H6g3_F_HCqA",
+      "title": "Social Media Marketing Course",
+      "channel": "Social Media Pro",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/H6g3_F_HCqA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "lq87ZtDpI-E",
+      "title": "Facebook Ads Course",
+      "channel": "Ads Mastery",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/lq87ZtDpI-E/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "9l6X8H6o9Jg",
+      "title": "Google Ads Full Course",
+      "channel": "Google Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/9l6X8H6o9Jg/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "3-2Pj5hxwrw",
+      "title": "Content Marketing Course",
+      "channel": "Content Pro",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/3-2Pj5hxwrw/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "LvgVMOpw-KM",
+      "title": "Email Marketing Full Course",
+      "channel": "Email Pro",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/LvgVMOpw-KM/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "8Mnp9DgJ_5I",
+      "title": "Influencer Marketing Course",
+      "channel": "Influencer Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/8Mnp9DgJ_5I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "u8D2Cj5vW7I",
+      "title": "Affiliate Marketing Full Course",
+      "channel": "Affiliate Pro",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/u8D2Cj5vW7I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "FfBfF3nVlwQ",
+      "title": "TikTok Marketing Course",
+      "channel": "TikTok Pro",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/FfBfF3nVlwQ/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "gFw-3JqH7zE",
+      "title": "Instagram Marketing Full Course",
+      "channel": "Instagram Pro",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/gFw-3JqH7zE/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "c9Wg6Cb_YlU",
+      "title": "YouTube Marketing Course",
+      "channel": "YouTube Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/c9Wg6Cb_YlU/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Y4gErB5jV1s",
+      "title": "Marketing Analytics Course",
+      "channel": "Analytics Pro",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Y4gErB5jV1s/mqdefault.jpg" } }
+    },
+
+    ---------- تعلم الآلة (15 فيديو) ----------
+    {
+      "videoId": "i_LwzRVP7bg",
+      "title": "Machine Learning Full Course",
       "channel": "freeCodeCamp",
-      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/W3L8c7y4B6c/mqdefault.jpg" } }
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/i_LwzRVP7bg/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "qFJeN9V1ZsI",
+      "title": "Deep Learning Full Course",
+      "channel": "Simplilearn",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/qFJeN9V1ZsI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "aircAruvnKk",
+      "title": "Machine Learning for Beginners",
+      "channel": "Data Science Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/aircAruvnKk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "6G8qElnvUOo",
+      "title": "Scikit-Learn Full Course",
+      "channel": "ML Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/6G8qElnvUOo/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "pR9D8zK0x5I",
+      "title": "TensorFlow Full Course",
+      "channel": "TensorFlow Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/pR9D8zK0x5I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "7U2JjT5rS7I",
+      "title": "PyTorch Full Course",
+      "channel": "PyTorch Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/7U2JjT5rS7I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "hKR-jYvv3kU",
+      "title": "Machine Learning with Python",
+      "channel": "ML Python",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/hKR-jYvv3kU/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "jBzwzrDvZ18",
+      "title": "Supervised Learning Course",
+      "channel": "ML Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/jBzwzrDvZ18/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "SqcY0GlETPk",
+      "title": "Unsupervised Learning Course",
+      "channel": "Data Science Hub",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/SqcY0GlETPk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "LHBE6Q9XlzI",
+      "title": "Reinforcement Learning Course",
+      "channel": "AI Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/LHBE6Q9XlzI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Z1RJmh_OqeA",
+      "title": "Natural Language Processing Course",
+      "channel": "NLP Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Z1RJmh_OqeA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "t8pPdKYpowI",
+      "title": "Computer Vision Course",
+      "channel": "CV Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/t8pPdKYpowI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "pdy3nh1tn6I",
+      "title": "ML Algorithms Explained",
+      "channel": "ML Simplified",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/pdy3nh1tn6I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "rHux0gMZ3Eg",
+      "title": "Feature Engineering Course",
+      "channel": "Data Prep",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/rHux0gMZ3Eg/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "N4mEzFDjqtA",
+      "title": "Model Deployment Course",
+      "channel": "ML Ops",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/N4mEzFDjqtA/mqdefault.jpg" } }
+    },
+
+    ---------- اختراق أخلاقي (15 فيديو) ----------
+    {
+      "videoId": "h4je6JbFz6M",
+      "title": "Ethical Hacking Full Course",
+      "channel": "The Cyber Mentor",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/h4je6JbFz6M/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "VqCgcpAypFQ",
+      "title": "Penetration Testing Full Course",
+      "channel": "Cyber Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/VqCgcpAypFQ/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "ZSPZob_1TOk",
+      "title": "Kali Linux Full Course",
+      "channel": "Linux Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/ZSPZob_1TOk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "8VsiWWwYb3E",
+      "title": "Metasploit Full Course",
+      "channel": "Hacking Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/8VsiWWwYb3E/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "xOvvU-wO7jA",
+      "title": "Network Hacking Course",
+      "channel": "Network Security",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/xOvvU-wO7jA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "i_LwzRVP7bg",
+      "title": "Web App Hacking Course",
+      "channel": "Web Security",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/i_LwzRVP7bg/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "qFJeN9V1ZsI",
+      "title": "Wireless Hacking Course",
+      "channel": "Wireless Security",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/qFJeN9V1ZsI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "aircAruvnKk",
+      "title": "Social Engineering Course",
+      "channel": "Hacking Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/aircAruvnKk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "6G8qElnvUOo",
+      "title": "Bug Bounty Course",
+      "channel": "Bug Hunter",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/6G8qElnvUOo/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "pR9D8zK0x5I",
+      "title": "CTF Walkthroughs",
+      "channel": "CTF Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/pR9D8zK0x5I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "7U2JjT5rS7I",
+      "title": "OSCP Preparation Course",
+      "channel": "OSCP Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/7U2JjT5rS7I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "hKR-jYvv3kU",
+      "title": "CEH Full Course",
+      "channel": "CEH Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/hKR-jYvv3kU/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "jBzwzrDvZ18",
+      "title": "Python for Ethical Hacking",
+      "channel": "Python Hacking",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/jBzwzrDvZ18/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "SqcY0GlETPk",
+      "title": "Hacking Tools Course",
+      "channel": "Hacking Tools",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/SqcY0GlETPk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "LHBE6Q9XlzI",
+      "title": "Red Team Course",
+      "channel": "Red Team",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/LHBE6Q9XlzI/mqdefault.jpg" } }
+    },
+
+    ---------- تطوير تطبيقات (15 فيديو) ----------
+    {
+      "videoId": "Ke90Tje7VS0",
+      "title": "تطوير تطبيقات الجوال - دورة كاملة",
+      "channel": "Mobile Dev Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Ke90Tje7VS0/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "DLX62G4lc44",
+      "title": "Flutter Full Course",
+      "channel": "Flutter Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/DLX62G4lc44/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "nTeuhbP7wdE",
+      "title": "React Native Full Course",
+      "channel": "React Native Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/nTeuhbP7wdE/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "3qBXWUpoPHo",
+      "title": "SwiftUI Full Course",
+      "channel": "iOS Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/3qBXWUpoPHo/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "4sosXZsdy-s",
+      "title": "Android Development Full Course",
+      "channel": "Android Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/4sosXZsdy-s/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "2pZmKW9-I_k",
+      "title": "Kotlin Full Course",
+      "channel": "Kotlin Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/2pZmKW9-I_k/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "eIrMbAQSU34",
+      "title": "iOS Development Full Course",
+      "channel": "iOS Dev",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/eIrMbAQSU34/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "xoL6WvCARJY",
+      "title": "Xamarin Full Course",
+      "channel": "Xamarin Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/xoL6WvCARJY/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "vLnPwxZdW4Y",
+      "title": "Ionic Full Course",
+      "channel": "Ionic Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/vLnPwxZdW4Y/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "VqCgcpAypFQ",
+      "title": "Cordova Full Course",
+      "channel": "Cordova Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/VqCgcpAypFQ/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "bX3jvD7XFPs",
+      "title": "Mobile UI/UX Design",
+      "channel": "UI UX Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/bX3jvD7XFPs/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "ZSPZob_1TOk",
+      "title": "Firebase Full Course",
+      "channel": "Firebase Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/ZSPZob_1TOk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "8VsiWWwYb3E",
+      "title": "App Monetization Course",
+      "channel": "Monetization Pro",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/8VsiWWwYb3E/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "xOvvU-wO7jA",
+      "title": "App Publishing Course",
+      "channel": "Publishing Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/xOvvU-wO7jA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "i_LwzRVP7bg",
+      "title": "Cross Platform Development",
+      "channel": "Cross Platform",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/i_LwzRVP7bg/mqdefault.jpg" } }
+    },
+
+    ---------- شبكات (15 فيديو) ----------
+    {
+      "videoId": "3c-iBn73dDE",
+      "title": "Network Full Course",
+      "channel": "Network Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/3c-iBn73dDE/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "h4je6JbFz6M",
+      "title": "CCNA Full Course",
+      "channel": "CCNA Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/h4je6JbFz6M/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "t2yrQsYg3UQ",
+      "title": "Network+ Full Course",
+      "channel": "Network+ Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/t2yrQsYg3UQ/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "eIrMbAQSU34",
+      "title": "TCP/IP Full Course",
+      "channel": "TCP/IP Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/eIrMbAQSU34/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "xoL6WvCARJY",
+      "title": "OSI Model Explained",
+      "channel": "Network Basics",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/xoL6WvCARJY/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "vLnPwxZdW4Y",
+      "title": "Routing and Switching",
+      "channel": "Routing Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/vLnPwxZdW4Y/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "VqCgcpAypFQ",
+      "title": "Network Security Full Course",
+      "channel": "Network Security",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/VqCgcpAypFQ/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "bX3jvD7XFPs",
+      "title": "Wireless Networks Course",
+      "channel": "Wireless Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/bX3jvD7XFPs/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "ZSPZob_1TOk",
+      "title": "Cloud Networking Course",
+      "channel": "Cloud Networks",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/ZSPZob_1TOk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "8VsiWWwYb3E",
+      "title": "SDN Full Course",
+      "channel": "SDN Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/8VsiWWwYb3E/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "xOvvU-wO7jA",
+      "title": "Network Troubleshooting",
+      "channel": "Troubleshooting",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/xOvvU-wO7jA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "i_LwzRVP7bg",
+      "title": "Subnetting Full Course",
+      "channel": "Subnetting",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/i_LwzRVP7bg/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "qFJeN9V1ZsI",
+      "title": "VLANs Explained",
+      "channel": "VLAN Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/qFJeN9V1ZsI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "aircAruvnKk",
+      "title": "Network Protocols Course",
+      "channel": "Protocols",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/aircAruvnKk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "6G8qElnvUOo",
+      "title": "IPv6 Full Course",
+      "channel": "IPv6 Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/6G8qElnvUOo/mqdefault.jpg" } }
+    },
+
+    ---------- Data Science (15 فيديو) ----------
+    {
+      "videoId": "jBzwzrDvZ18",
+      "title": "Data Science Full Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/jBzwzrDvZ18/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "SqcY0GlETPk",
+      "title": "Data Science for Beginners",
+      "channel": "Simplilearn",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/SqcY0GlETPk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "rHux0gMZ3Eg",
+      "title": "Python Data Science Handbook",
+      "channel": "Corey Schafer",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/rHux0gMZ3Eg/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Z1RJmh_OqeA",
+      "title": "Data Science with Python",
+      "channel": "Data Science Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Z1RJmh_OqeA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "t8pPdKYpowI",
+      "title": "Data Science with R",
+      "channel": "R Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/t8pPdKYpowI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "pdy3nh1tn6I",
+      "title": "Statistics for Data Science",
+      "channel": "Stat Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/pdy3nh1tn6I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "N2A0VtQd9Yk",
+      "title": "Data Science Interview Prep",
+      "channel": "Interview Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/N2A0VtQd9Yk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "yZvFH7B6gKI",
+      "title": "Data Science Projects",
+      "channel": "Project Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/yZvFH7B6gKI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "dD2EISBDjWM",
+      "title": "Data Science Roadmap",
+      "channel": "Roadmap",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/dD2EISBDjWM/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Wg8rrAsVfTc",
+      "title": "Data Science Tools",
+      "channel": "Tools Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Wg8rrAsVfTc/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "hQn0VB4K0l8",
+      "title": "Data Science Career Guide",
+      "channel": "Career Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/hQn0VB4K0l8/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "MJn3og8UwLE",
+      "title": "Data Science Bootcamp",
+      "channel": "Bootcamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/MJn3og8UwLE/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "1Rs2ND1ryYc",
+      "title": "Data Science Specialization",
+      "channel": "Specialization",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/1Rs2ND1ryYc/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "a_iQb1lnAEQ",
+      "title": "Data Science with SQL",
+      "channel": "SQL Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/a_iQb1lnAEQ/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Oe421EPjeBE",
+      "title": "Data Science with Excel",
+      "channel": "Excel Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Oe421EPjeBE/mqdefault.jpg" } }
+    },
+
+    ---------- Machine Learning (15 فيديو) ----------
+    {
+      "videoId": "i_LwzRVP7bg",
+      "title": "Machine Learning Full Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/i_LwzRVP7bg/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "qFJeN9V1ZsI",
+      "title": "Machine Learning for Beginners",
+      "channel": "Simplilearn",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/qFJeN9V1ZsI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "aircAruvnKk",
+      "title": "Machine Learning with Python",
+      "channel": "ML Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/aircAruvnKk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "6G8qElnvUOo",
+      "title": "Machine Learning Algorithms",
+      "channel": "Algorithms Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/6G8qElnvUOo/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "pR9D8zK0x5I",
+      "title": "Machine Learning Projects",
+      "channel": "Project Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/pR9D8zK0x5I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "7U2JjT5rS7I",
+      "title": "Machine Learning Interview Prep",
+      "channel": "Interview Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/7U2JjT5rS7I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "hKR-jYvv3kU",
+      "title": "Machine Learning Roadmap",
+      "channel": "Roadmap",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/hKR-jYvv3kU/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "jBzwzrDvZ18",
+      "title": "Machine Learning with R",
+      "channel": "R Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/jBzwzrDvZ18/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "SqcY0GlETPk",
+      "title": "Machine Learning with TensorFlow",
+      "channel": "TensorFlow Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/SqcY0GlETPk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "LHBE6Q9XlzI",
+      "title": "Machine Learning with PyTorch",
+      "channel": "PyTorch Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/LHBE6Q9XlzI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Z1RJmh_OqeA",
+      "title": "Supervised Learning",
+      "channel": "ML Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Z1RJmh_OqeA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "t8pPdKYpowI",
+      "title": "Unsupervised Learning",
+      "channel": "ML Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/t8pPdKYpowI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "pdy3nh1tn6I",
+      "title": "Reinforcement Learning",
+      "channel": "RL Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/pdy3nh1tn6I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "rHux0gMZ3Eg",
+      "title": "ML Model Deployment",
+      "channel": "ML Ops",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/rHux0gMZ3Eg/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "N4mEzFDjqtA",
+      "title": "ML in Production",
+      "channel": "Production ML",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/N4mEzFDjqtA/mqdefault.jpg" } }
+    },
+
+    ---------- Cybersecurity (15 فيديو) ----------
+    {
+      "videoId": "nPJg7GXjN8s",
+      "title": "Cybersecurity Full Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/nPJg7GXjN8s/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "yyUHQIec83I",
+      "title": "Cybersecurity for Beginners",
+      "channel": "Simplilearn",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/yyUHQIec83I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Qk2hl4YG4KY",
+      "title": "Cybersecurity with Python",
+      "channel": "Python Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Qk2hl4YG4KY/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "3c-iBn73dDE",
+      "title": "Network Security Full Course",
+      "channel": "Network Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/3c-iBn73dDE/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "h4je6JbFz6M",
+      "title": "Information Security Course",
+      "channel": "InfoSec",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/h4je6JbFz6M/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "t2yrQsYg3UQ",
+      "title": "Cyber Security Career Guide",
+      "channel": "Career Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/t2yrQsYg3UQ/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "eIrMbAQSU34",
+      "title": "Cyber Security Tools",
+      "channel": "Tools Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/eIrMbAQSU34/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "xoL6WvCARJY",
+      "title": "Security+ Full Course",
+      "channel": "CompTIA",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/xoL6WvCARJY/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "vLnPwxZdW4Y",
+      "title": "CISSP Full Course",
+      "channel": "CISSP Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/vLnPwxZdW4Y/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "VqCgcpAypFQ",
+      "title": "Cyber Security Interview Prep",
+      "channel": "Interview Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/VqCgcpAypFQ/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "bX3jvD7XFPs",
+      "title": "Cyber Security Projects",
+      "channel": "Project Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/bX3jvD7XFPs/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "ZSPZob_1TOk",
+      "title": "Cyber Security Roadmap",
+      "channel": "Roadmap",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/ZSPZob_1TOk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "8VsiWWwYb3E",
+      "title": "Cyber Security Certification",
+      "channel": "Certification",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/8VsiWWwYb3E/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "xOvvU-wO7jA",
+      "title": "Digital Forensics",
+      "channel": "Forensics",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/xOvvU-wO7jA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "i_LwzRVP7bg",
+      "title": "Malware Analysis",
+      "channel": "Malware",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/i_LwzRVP7bg/mqdefault.jpg" } }
+    },
+
+    ---------- AI (15 فيديو) ----------
+    {
+      "videoId": "Gv9_4yMHFhI",
+      "title": "Artificial Intelligence Full Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Gv9_4yMHFhI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "5NgNicANyqM",
+      "title": "AI for Beginners",
+      "channel": "Simplilearn",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/5NgNicANyqM/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "xOvvU-wO7jA",
+      "title": "Artificial Intelligence with Python",
+      "channel": "AI Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/xOvvU-wO7jA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "i_LwzRVP7bg",
+      "title": "AI and Machine Learning",
+      "channel": "AI ML Academy",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/i_LwzRVP7bg/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "qFJeN9V1ZsI",
+      "title": "Deep Learning AI",
+      "channel": "Deep Learning",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/qFJeN9V1ZsI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "aircAruvnKk",
+      "title": "Neural Networks AI",
+      "channel": "Neural Networks",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/aircAruvnKk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "6G8qElnvUOo",
+      "title": "Generative AI Course",
+      "channel": "Gen AI",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/6G8qElnvUOo/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "pR9D8zK0x5I",
+      "title": "AI Tools Tutorial",
+      "channel": "AI Tools",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/pR9D8zK0x5I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "7U2JjT5rS7I",
+      "title": "AI in Business",
+      "channel": "Business AI",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/7U2JjT5rS7I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "hKR-jYvv3kU",
+      "title": "AI Ethics",
+      "channel": "Ethics",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/hKR-jYvv3kU/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "jBzwzrDvZ18",
+      "title": "AI Career Guide",
+      "channel": "Career",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/jBzwzrDvZ18/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "SqcY0GlETPk",
+      "title": "AI Projects",
+      "channel": "Projects",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/SqcY0GlETPk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "LHBE6Q9XlzI",
+      "title": "AI in Healthcare",
+      "channel": "Healthcare AI",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/LHBE6Q9XlzI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Z1RJmh_OqeA",
+      "title": "AI in Finance",
+      "channel": "Finance AI",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Z1RJmh_OqeA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "t8pPdKYpowI",
+      "title": "AI for Robotics",
+      "channel": "Robotics",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/t8pPdKYpowI/mqdefault.jpg" } }
     }
   ]
 }
