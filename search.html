@@ -1,131 +1,24 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مكتبة الدورات - أكاديمية زاد</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; font-family:'Tajawal', sans-serif; }
-        body { background:#f8fafc; padding:20px; }
-        .container { max-width:1200px; margin:0 auto; }
-        .header { background:white; padding:20px; border-radius:20px; margin-bottom:30px; display:flex; justify-content:space-between; align-items:center; }
-        .logo h2 { color:#10b981; }
-        .nav-links a { text-decoration:none; margin:0 15px; color:#333; }
-        .search-box { display:flex; gap:10px; margin:30px 0; }
-        .search-box input { flex:1; padding:15px; border-radius:50px; border:2px solid #e2e8f0; font-size:16px; }
-        .search-box button { background:#10b981; color:white; border:none; padding:15px 30px; border-radius:50px; cursor:pointer; font-weight:bold; }
-        .suggestions { display:flex; flex-wrap:wrap; gap:10px; margin:20px 0; }
-        .chip { background:#f1f5f9; padding:10px 20px; border-radius:50px; cursor:pointer; transition:0.3s; }
-        .chip:hover { background:#10b981; color:white; }
-        .results { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; margin-top:30px; }
-        .video-card { background:white; border-radius:15px; overflow:hidden; cursor:pointer; transition:0.3s; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
-        .video-card:hover { transform:translateY(-5px); box-shadow:0 10px 25px -5px #10b981; }
-        .video-thumb { width:100%; height:180px; object-fit:cover; }
-        .video-info { padding:15px; }
-        .video-title { font-size:16px; font-weight:bold; margin-bottom:8px; }
-        .video-channel { color:#666; font-size:14px; }
-        .footer { text-align:center; margin-top:40px; color:#666; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="logo"><h2>📚 أكاديمية زاد</h2></div>
-            <div class="nav-links">
-                <a href="index.html">الرئيسية</a>
-                <a href="search.html">البحث</a>
-            </div>
-        </div>
-
-        <div style="background:white; padding:30px; border-radius:20px; text-align:center;">
-            <h1>🔍 ابحث عن دورتك</h1>
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="اكتب كلمة البحث...">
-                <button onclick="searchVideos()">بحث</button>
-            </div>
-        </div>
-
-        <div class="suggestions" id="suggestions"></div>
-        <div class="results" id="results"></div>
-        <div class="footer">جميع الفيديوهات من قنوات تعليمية موثوقة</div>
-    </div>
-
-    <script>
-        const SUGGESTIONS = ["Python", "JavaScript", "ذكاء اصطناعي", "أمن سيبراني", "تحليل بيانات", "تسويق رقمي", "تعلم الآلة", "اختراق أخلاقي", "تطوير تطبيقات", "شبكات", "بايثون", "Data Science", "Machine Learning", "Cybersecurity", "AI"];
-        
-        let videos = [];
-
-        // عرض الاقتراحات
-        function showSuggestions() {
-            let html = '';
-            SUGGESTIONS.forEach(word => {
-                html += `<div class="chip" onclick="searchWord('${word}')">${word}</div>`;
-            });
-            document.getElementById('suggestions').innerHTML = html;
-        }
-
-        function searchWord(word) {
-            document.getElementById('searchInput').value = word;
-            searchVideos();
-        }
-
-        // تحميل الفيديوهات
-        async function loadVideos() {
-            try {
-                const response = await fetch('/data/videos.json');
-                const data = await response.json();
-                videos = data.videos || [];
-                console.log('✅ تم تحميل', videos.length, 'فيديو');
-                return true;
-            } catch(e) {
-                console.error('خطأ:', e);
-                return false;
-            }
-        }
-
-        // البحث
-        async function searchVideos() {
-            const query = document.getElementById('searchInput').value.trim().toLowerCase();
-            const resultsDiv = document.getElementById('results');
-            
-            if (!query) {
-                alert('اكتب كلمة البحث');
-                return;
-            }
-
-            resultsDiv.innerHTML = '<div style="text-align:center;">جاري البحث...</div>';
-            
-            if (videos.length === 0) {
-                await loadVideos();
-            }
-
-            const filtered = videos.filter(v => v.title && v.title.toLowerCase().includes(query));
-            
-            if (filtered.length === 0) {
-                resultsDiv.innerHTML = '<div style="text-align:center;">❌ لا توجد نتائج</div>';
-                return;
-            }
-
-            let html = '';
-            filtered.slice(0, 30).forEach(v => {
-                html += `
-                    <div class="video-card" onclick="window.open('https://youtube.com/watch?v=${v.videoId}', '_blank')">
-                        <img class="video-thumb" src="${v.thumbnails?.medium?.url || 'https://via.placeholder.com/320x180'}" onerror="this.src='https://via.placeholder.com/320x180'">
-                        <div class="video-info">
-                            <div class="video-title">${v.title}</div>
-                            <div class="video-channel">${v.channel || 'قناة'}</div>
-                        </div>
-                    </div>
-                `;
-            });
-            resultsDiv.innerHTML = html;
-        }
-
-        // بدء التشغيل
-        showSuggestions();
-        loadVideos();
-    </script>
-</body>
-</html>
+{
+  "videos": [
+    {"videoId": "rfscVS0vtbw", "title": "Python Full Course for Beginners", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/rfscVS0vtbw/mqdefault.jpg"}}},
+    {"videoId": "N4mEzFDjqtA", "title": "Python for Beginners - Learn Python in 1 Hour", "channel": "Programming with Mosh", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/N4mEzFDjqtA/mqdefault.jpg"}}},
+    {"videoId": "8DvywoWv6fI", "title": "JavaScript Tutorial for Beginners", "channel": "Programming with Mosh", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/8DvywoWv6fI/mqdefault.jpg"}}},
+    {"videoId": "PkZNo7MFNFg", "title": "Learn JavaScript - Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/PkZNo7MFNFg/mqdefault.jpg"}}},
+    {"videoId": "Gv9_4yMHFhI", "title": "Artificial Intelligence Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/Gv9_4yMHFhI/mqdefault.jpg"}}},
+    {"videoId": "5NgNicANyqM", "title": "AI for Beginners", "channel": "Simplilearn", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/5NgNicANyqM/mqdefault.jpg"}}},
+    {"videoId": "nPJg7GXjN8s", "title": "Cybersecurity Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/nPJg7GXjN8s/mqdefault.jpg"}}},
+    {"videoId": "yyUHQIec83I", "title": "Cybersecurity for Beginners", "channel": "Simplilearn", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/yyUHQIec83I/mqdefault.jpg"}}},
+    {"videoId": "jBzwzrDvZ18", "title": "Data Science Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/jBzwzrDvZ18/mqdefault.jpg"}}},
+    {"videoId": "SqcY0GlETPk", "title": "Data Science for Beginners", "channel": "Simplilearn", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/SqcY0GlETPk/mqdefault.jpg"}}},
+    {"videoId": "VgPJ3Vp3Jk4", "title": "Digital Marketing Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/VgPJ3Vp3Jk4/mqdefault.jpg"}}},
+    {"videoId": "lxJRq3pK4KI", "title": "SEO Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/lxJRq3pK4KI/mqdefault.jpg"}}},
+    {"videoId": "i_LwzRVP7bg", "title": "Machine Learning Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/i_LwzRVP7bg/mqdefault.jpg"}}},
+    {"videoId": "qFJeN9V1ZsI", "title": "Machine Learning for Beginners", "channel": "Simplilearn", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/qFJeN9V1ZsI/mqdefault.jpg"}}},
+    {"videoId": "h4je6JbFz6M", "title": "Ethical Hacking Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/h4je6JbFz6M/mqdefault.jpg"}}},
+    {"videoId": "VqCgcpAypFQ", "title": "Penetration Testing Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/VqCgcpAypFQ/mqdefault.jpg"}}},
+    {"videoId": "Ke90Tje7VS0", "title": "React JS Tutorial", "channel": "Programming with Mosh", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/Ke90Tje7VS0/mqdefault.jpg"}}},
+    {"videoId": "DLX62G4lc44", "title": "React Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/DLX62G4lc44/mqdefault.jpg"}}},
+    {"videoId": "3c-iBn73dDE", "title": "Network Security Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/3c-iBn73dDE/mqdefault.jpg"}}},
+    {"videoId": "t2yrQsYg3UQ", "title": "Network+ Full Course", "channel": "freeCodeCamp", "thumbnails": {"medium": {"url": "https://i.ytimg.com/vi/t2yrQsYg3UQ/mqdefault.jpg"}}}
+  ]
+}
