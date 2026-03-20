@@ -1,97 +1,21 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أكاديمية زاد | منصة التعليم الاحترافية 2026</title>
-    <meta name="description" content="أكاديمية زاد: دورات في الذكاء الاصطناعي، الأمن السيبراني، تحليل البيانات، والتسويق الرقمي. أكثر من 500 ساعة تدريبية معتمدة.">
-    <meta name="keywords" content="دورات الذكاء الاصطناعي, تعلم الأمن السيبراني, بايثون, تحليل البيانات, تسويق رقمي, شهادة معتمدة">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* نفس الأنماط السابقة (مختصرة) */
-        * { margin:0; padding:0; box-sizing:border-box; font-family:'Tajawal', sans-serif; }
-        body { background:#f8fafc; color:#1e293b; }
-        .container { max-width:1280px; margin:0 auto; padding:0 20px; }
-        .header { background:white; position:sticky; top:0; padding:15px 0; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
-        .header-content { display:flex; justify-content:space-between; align-items:center; }
-        .logo { display:flex; align-items:center; gap:10px; }
-        .logo-icon { background:#10b981; color:white; width:45px; height:45px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:22px; }
-        .nav-links a { color:#475569; text-decoration:none; margin:0 15px; font-weight:500; }
-        .nav-links a.active { color:#10b981; font-weight:700; }
-        .btn { background:#10b981; color:white; padding:12px 30px; border-radius:50px; text-decoration:none; display:inline-block; font-weight:700; transition:0.3s; }
-        .hero { background:linear-gradient(135deg,#ffffff,#f1f5f9); border-radius:40px; padding:60px 40px; margin:40px 0; }
-        .hero h2 { font-size:48px; font-weight:900; margin-bottom:20px; }
-        .hero-gradient { color:#10b981; }
-        .courses-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; margin:50px 0; }
-        .course-card { background:white; border-radius:20px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:0.3s; }
-        .course-card:hover { transform:translateY(-8px); box-shadow:0 20px 30px -10px #10b981; }
-        .course-image { height:180px; background:#cbd5e1; }
-        .course-content { padding:20px; }
-        .cta { background:#1e293b; color:white; border-radius:40px; padding:60px 40px; text-align:center; margin:60px 0; }
-        .footer { background:#1e293b; color:#cbd5e1; padding:40px 0; margin-top:60px; }
-        @media (max-width:768px) { .hero h2 { font-size:32px; } }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <div class="container header-content">
-            <div class="logo">
-                <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
-                <h1>أكاديمية زاد</h1>
-            </div>
-            <div class="nav-links">
-                <a href="index.html" class="active">الرئيسية</a>
-                <a href="search.html">الدورات</a>
-                <a href="#">اتصل بنا</a>
-            </div>
-            <a href="search.html" class="btn"><i class="fas fa-search"></i> ابحث عن دورة</a>
-        </div>
-    </div>
-
-    <div class="container">
-        <section class="hero">
-            <h2>أتقن <span class="hero-gradient">مهارات المستقبل</span> في 2026</h2>
-            <p>أكثر من 500 دورة في الذكاء الاصطناعي، الأمن السيبراني، تحليل البيانات والتسويق الرقمي.</p>
-            <div style="margin-top:30px;"><a href="search.html" class="btn" style="padding:15px 50px;">ابدأ التعلم مجاناً</a></div>
-        </section>
-
-        <h2 style="text-align:center; font-size:36px; margin:50px 0;">أشهر الدورات</h2>
-        <div class="courses-grid" id="featured-courses"></div>
-    </div>
-
-    <section class="cta">
-        <h2 style="font-size:36px;">انطلق في رحلة التعلم</h2>
-        <p>اشترك الآن وتمتع بوصول غير محدود لكل الدورات + شهادات معتمدة</p>
-        <a href="search.html" class="btn" style="background:white; color:#1e293b;">تصفح الدورات</a>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>© 2026 أكاديمية زاد – جميع الحقوق محفوظة</p>
-        </div>
-    </footer>
-
-    <script>
-        const courses = [
-            {title:"الذكاء الاصطناعي التوليدي", instructor:"د. أحمد الزهراني"},
-            {title:"الأمن السيبراني للمبتدئين", instructor:"مهندس محمد السبيعي"},
-            {title:"تحليل البيانات باستخدام بايثون", instructor:"د. نورة العتيبي"},
-            {title:"التسويق الرقمي المتقدم 2026", instructor:"أ. خالد المطيري"}
-        ];
-        const container = document.getElementById('featured-courses');
-        courses.forEach(c => {
-            container.innerHTML += `
-                <div class="course-card">
-                    <div class="course-image" style="background:#e2e8f0;"></div>
-                    <div class="course-content">
-                        <h3>${c.title}</h3>
-                        <p>${c.instructor}</p>
-                        <a href="search.html" class="btn" style="margin-top:15px;">عرض الدورة</a>
-                    </div>
+<script>
+    const courses = [
+        { title: "الذكاء الاصطناعي التوليدي", instructor: "د. أحمد الزهراني", videoId: "Gv9_4yMHFhI" },
+        { title: "الأمن السيبراني للمبتدئين", instructor: "مهندس محمد السبيعي", videoId: "nPJg7GXjN8s" },
+        { title: "تحليل البيانات باستخدام بايثون", instructor: "د. نورة العتيبي", videoId: "jBzwzrDvZ18" },
+        { title: "التسويق الرقمي المتقدم 2026", instructor: "أ. خالد المطيري", videoId: "VgPJ3Vp3Jk4" }
+    ];
+    const container = document.getElementById('featured-courses');
+    courses.forEach(c => {
+        container.innerHTML += `
+            <div class="course-card" onclick="window.location.href='course.html?id=${c.videoId}&title=${encodeURIComponent(c.title)}&channel=${encodeURIComponent(c.instructor)}'">
+                <div class="course-image" style="background:#e2e8f0;"></div>
+                <div class="course-content">
+                    <h3>${c.title}</h3>
+                    <p>${c.instructor}</p>
+                    <a href="javascript:void(0)" class="btn" style="margin-top:15px;">عرض الدورة</a>
                 </div>
-            `;
-        });
-    </script>
-</body>
-</html>
+            </div>
+        `;
+    });
+</script>
