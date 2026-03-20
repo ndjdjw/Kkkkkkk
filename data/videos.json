@@ -2,7 +2,7 @@
   "videos": [
     {
       "videoId": "rfscVS0vtbw",
-      "title": "Learn Python - Full Course for Beginners",
+      "title": "Learn Python - Full Course for Beginners [4 hours]",
       "channel": "freeCodeCamp",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/rfscVS0vtbw/mqdefault.jpg" } }
     },
@@ -14,7 +14,7 @@
     },
     {
       "videoId": "8DvywoWv6fI",
-      "title": "JavaScript Tutorial for Beginners",
+      "title": "JavaScript Tutorial for Beginners - Full Course",
       "channel": "Programming with Mosh",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/8DvywoWv6fI/mqdefault.jpg" } }
     },
@@ -26,7 +26,7 @@
     },
     {
       "videoId": "Ke90Tje7VS0",
-      "title": "React JS Tutorial for Beginners",
+      "title": "React JS Tutorial for Beginners - Full Course",
       "channel": "Programming with Mosh",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Ke90Tje7VS0/mqdefault.jpg" } }
     },
@@ -44,79 +44,79 @@
     },
     {
       "videoId": "pdy3nh1tn6I",
-      "title": "Python OOP Tutorial",
+      "title": "Python OOP Tutorial - Classes and Instances",
       "channel": "Corey Schafer",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/pdy3nh1tn6I/mqdefault.jpg" } }
     },
     {
       "videoId": "t8pPdKYpowI",
-      "title": "Python Django Tutorial",
+      "title": "Python Django Tutorial for Beginners",
       "channel": "Corey Schafer",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/t8pPdKYpowI/mqdefault.jpg" } }
     },
     {
       "videoId": "rHux0gMZ3Eg",
-      "title": "Python Pandas Tutorial",
+      "title": "Python Pandas Tutorial - Data Science",
       "channel": "Corey Schafer",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/rHux0gMZ3Eg/mqdefault.jpg" } }
     },
     {
       "videoId": "Z1RJmh_OqeA",
-      "title": "Python Flask Tutorial",
+      "title": "Python Flask Tutorial for Beginners",
       "channel": "freeCodeCamp",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Z1RJmh_OqeA/mqdefault.jpg" } }
     },
     {
       "videoId": "jBzwzrDvZ18",
-      "title": "Python for Data Science",
+      "title": "Python for Data Science - Full Course",
       "channel": "freeCodeCamp",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/jBzwzrDvZ18/mqdefault.jpg" } }
     },
     {
       "videoId": "hKR-jYvv3kU",
-      "title": "Python Automation Tutorial",
+      "title": "Python Automation Tutorial - Automate Your Life",
       "channel": "freeCodeCamp",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/hKR-jYvv3kU/mqdefault.jpg" } }
     },
     {
       "videoId": "LHBE6Q9XlzI",
-      "title": "Python Machine Learning Tutorial",
+      "title": "Python Machine Learning Tutorial - Scikit-Learn",
       "channel": "freeCodeCamp",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/LHBE6Q9XlzI/mqdefault.jpg" } }
     },
     {
       "videoId": "f79MRyMsjrQ",
-      "title": "Python GUI Tutorial",
+      "title": "Python GUI Tutorial - Tkinter Course",
       "channel": "The New Boston",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/f79MRyMsjrQ/mqdefault.jpg" } }
     },
     {
       "videoId": "YXPyB4XeYLA",
-      "title": "Python Tkinter Tutorial",
+      "title": "Python Tkinter Tutorial - GUI Apps",
       "channel": "freeCodeCamp",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/YXPyB4XeYLA/mqdefault.jpg" } }
     },
     {
       "videoId": "3Xc3CA650YI",
-      "title": "Python Selenium Tutorial",
+      "title": "Python Selenium Tutorial - Web Scraping",
       "channel": "freeCodeCamp",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/3Xc3CA650YI/mqdefault.jpg" } }
     },
     {
       "videoId": "J8LdW6P-HkU",
-      "title": "Python API Tutorial",
+      "title": "Python API Tutorial - REST APIs",
       "channel": "Tech With Tim",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/J8LdW6P-HkU/mqdefault.jpg" } }
     },
     {
       "videoId": "N4mEzFDjqtA",
-      "title": "Python Web Scraping Tutorial",
+      "title": "Python Web Scraping Tutorial - Beautiful Soup",
       "channel": "freeCodeCamp",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/N4mEzFDjqtA/mqdefault.jpg" } }
     },
     {
       "videoId": "sDqcLl1R7RI",
-      "title": "Python Testing Tutorial",
+      "title": "Python Testing Tutorial - Unit Testing",
       "channel": "Corey Schafer",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/sDqcLl1R7RI/mqdefault.jpg" } }
     },
@@ -128,57 +128,466 @@
     },
     {
       "videoId": "Wz3BiwGpFkA",
-      "title": "Python Multithreading Tutorial",
+      "title": "Python Multithreading Tutorial - Threading",
       "channel": "Corey Schafer",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Wz3BiwGpFkA/mqdefault.jpg" } }
     },
     {
       "videoId": "FJd1oYJkG5s",
-      "title": "Python Networking Tutorial",
+      "title": "Python Networking Tutorial - Sockets",
       "channel": "freeCodeCamp",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/FJd1oYJkG5s/mqdefault.jpg" } }
     },
     {
       "videoId": "uuhzaRTzF5M",
-      "title": "Python Regex Tutorial",
+      "title": "Python Regex Tutorial - Regular Expressions",
       "channel": "Corey Schafer",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/uuhzaRTzF5M/mqdefault.jpg" } }
     },
     {
       "videoId": "tKTZoB2Vjuk",
-      "title": "Python Logging Tutorial",
+      "title": "Python Logging Tutorial - Logging Module",
       "channel": "Corey Schafer",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/tKTZoB2Vjuk/mqdefault.jpg" } }
     },
     {
       "videoId": "XQgXKtPSzUI",
-      "title": "Python Virtual Environment Tutorial",
+      "title": "Python Virtual Environment Tutorial - venv",
       "channel": "Corey Schafer",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/XQgXKtPSzUI/mqdefault.jpg" } }
     },
     {
       "videoId": "bPrmA1SEN2k",
-      "title": "Python JSON Tutorial",
+      "title": "Python JSON Tutorial - JSON Module",
       "channel": "Corey Schafer",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/bPrmA1SEN2k/mqdefault.jpg" } }
     },
     {
       "videoId": "z8l5GQ3qJ0E",
-      "title": "Python CSV Tutorial",
+      "title": "Python CSV Tutorial - CSV Module",
       "channel": "Corey Schafer",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/z8l5GQ3qJ0E/mqdefault.jpg" } }
     },
     {
       "videoId": "eirjjyP2qcQ",
-      "title": "Python SQLite Tutorial",
+      "title": "Python SQLite Tutorial - Database",
       "channel": "Corey Schafer",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/eirjjyP2qcQ/mqdefault.jpg" } }
     },
     {
       "videoId": "D2a5fH4h2I4",
-      "title": "Python MongoDB Tutorial",
+      "title": "Python MongoDB Tutorial - PyMongo",
       "channel": "Tech With Tim",
       "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/D2a5fH4h2I4/mqdefault.jpg" } }
-    }
-  ]
-}
+    },
+    {
+      "videoId": "Wg8rrAsVfTc",
+      "title": "SQL Tutorial - Full Database Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Wg8rrAsVfTc/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "hQn0VB4K0l8",
+      "title": "SQL for Beginners - Learn SQL",
+      "channel": "Programming with Mosh",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/hQn0VB4K0l8/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "MJn3og8UwLE",
+      "title": "HTML Full Course - Build a Website",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/MJn3og8UwLE/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "1Rs2ND1ryYc",
+      "title": "CSS Full Course - Flexbox, Grid, Animations",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/1Rs2ND1ryYc/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "a_iQb1lnAEQ",
+      "title": "Node.js Full Course for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/a_iQb1lnAEQ/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Oe421EPjeBE",
+      "title": "Node.js Tutorial for Beginners",
+      "channel": "Programming with Mosh",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Oe421EPjeBE/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "ttE0F7fghfk",
+      "title": "Next.js Full Course for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/ttE0F7fghfk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "mJg9bZ5K8qI",
+      "title": "TypeScript Tutorial for Beginners",
+      "channel": "Programming with Mosh",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/mJg9bZ5K8qI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "BwuLxPH8IDs",
+      "title": "Git and GitHub Tutorial for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/BwuLxPH8IDs/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "8JJ101D3knE",
+      "title": "Docker Tutorial for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/8JJ101D3knE/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "X48VuDVv0do",
+      "title": "Kubernetes Tutorial for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/X48VuDVv0do/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "nPJg7GXjN8s",
+      "title": "AWS Certified Solutions Architect - Full Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/nPJg7GXjN8s/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "yyUHQIec83I",
+      "title": "Microsoft Azure Tutorial for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/yyUHQIec83I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Qk2hl4YG4KY",
+      "title": "Google Cloud Platform Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Qk2hl4YG4KY/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "3c-iBn73dDE",
+      "title": "DevOps Full Course for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/3c-iBn73dDE/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "h4je6JbFz6M",
+      "title": "Linux Command Line Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/h4je6JbFz6M/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "t2yrQsYg3UQ",
+      "title": "Java Full Course for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/t2yrQsYg3UQ/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "eIrMbAQSU34",
+      "title": "Java Tutorial for Beginners",
+      "channel": "Programming with Mosh",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/eIrMbAQSU34/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "xoL6WvCARJY",
+      "title": "C++ Full Course for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/xoL6WvCARJY/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "vLnPwxZdW4Y",
+      "title": "C# Full Course for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/vLnPwxZdW4Y/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "VqCgcpAypFQ",
+      "title": "PHP Full Course for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/VqCgcpAypFQ/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "bX3jvD7XFPs",
+      "title": "R Programming Full Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/bX3jvD7XFPs/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "ZSPZob_1TOk",
+      "title": "Go Programming Tutorial - Golang",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/ZSPZob_1TOk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "8VsiWWwYb3E",
+      "title": "Rust Programming Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/8VsiWWwYb3E/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "xOvvU-wO7jA",
+      "title": "Artificial Intelligence Full Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/xOvvU-wO7jA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "i_LwzRVP7bg",
+      "title": "Machine Learning Full Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/i_LwzRVP7bg/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "qFJeN9V1ZsI",
+      "title": "Deep Learning Full Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/qFJeN9V1ZsI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Gv9_4yMHFhI",
+      "title": "ChatGPT Tutorial for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Gv9_4yMHFhI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "6G8qElnvUOo",
+      "title": "Prompt Engineering Course - ChatGPT",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/6G8qElnvUOo/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Gv9_4yMHFhI",
+      "title": "Artificial Intelligence for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Gv9_4yMHFhI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "5NgNicANyqM",
+      "title": "Generative AI Full Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/5NgNicANyqM/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "VgPJ3Vp3Jk4",
+      "title": "Digital Marketing Full Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/VgPJ3Vp3Jk4/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "lxJRq3pK4KI",
+      "title": "SEO Tutorial for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/lxJRq3pK4KI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "o5_nR_YHfQg",
+      "title": "Social Media Marketing Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/o5_nR_YHfQg/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "zYP3B_DG7pU",
+      "title": "Google Analytics Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/zYP3B_DG7pU/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "H6g3_F_HCqA",
+      "title": "Facebook Ads Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/H6g3_F_HCqA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "lq87ZtDpI-E",
+      "title": "Project Management Professional PMP Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/lq87ZtDpI-E/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "9l6X8H6o9Jg",
+      "title": "Agile Scrum Master Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/9l6X8H6o9Jg/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "3-2Pj5hxwrw",
+      "title": "Financial Accounting Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/3-2Pj5hxwrw/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "LvgVMOpw-KM",
+      "title": "Investment Banking Basics",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/LvgVMOpw-KM/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "8Mnp9DgJ_5I",
+      "title": "QuickBooks Online Training",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/8Mnp9DgJ_5I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "u8D2Cj5vW7I",
+      "title": "CPA Exam Preparation",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/u8D2Cj5vW7I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "FfBfF3nVlwQ",
+      "title": "Stock Market Investing for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/FfBfF3nVlwQ/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "gFw-3JqH7zE",
+      "title": "Graphic Design Full Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/gFw-3JqH7zE/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "c9Wg6Cb_YlU",
+      "title": "UI UX Design Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/c9Wg6Cb_YlU/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Y4gErB5jV1s",
+      "title": "Photoshop Tutorial for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Y4gErB5jV1s/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "WAcq6K0VmgY",
+      "title": "Illustrator Tutorial for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/WAcq6K0VmgY/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "VX6iD9Urb4Y",
+      "title": "Premiere Pro Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/VX6iD9Urb4Y/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "teBcZUqUy9A",
+      "title": "After Effects Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/teBcZUqUy9A/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "pB0WvcxTbCA",
+      "title": "DaVinci Resolve Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/pB0WvcxTbCA/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "J8hzJxb0Wpc",
+      "title": "Figma Tutorial for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/J8hzJxb0Wpc/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "YzL2hXQ5A6Q",
+      "title": "Blender 3D Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/YzL2hXQ5A6Q/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "xk4_1vDrzzo",
+      "title": "Unity Game Development Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/xk4_1vDrzzo/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "IlkaBGCf7qs",
+      "title": "Unreal Engine Tutorial",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/IlkaBGCf7qs/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "dD2EISBDjWM",
+      "title": "Excel Full Course - Data Analysis",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/dD2EISBDjWM/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "N2A0VtQd9Yk",
+      "title": "Power BI Tutorial - Data Visualization",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/N2A0VtQd9Yk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "yZvFH7B6gKI",
+      "title": "Tableau Tutorial for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/yZvFH7B6gKI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "j8xJ1JO6CwI",
+      "title": "Communication Skills Training",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/j8xJ1JO6CwI/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "r_kJUKdcGss",
+      "title": "Leadership Skills Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/r_kJUKdcGss/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "V8eLdbKXGzk",
+      "title": "Public Speaking Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/V8eLdbKXGzk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "Lp7E973zozc",
+      "title": "Time Management Skills",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/Lp7E973zozc/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "LrSAtPlAeCc",
+      "title": "English Speaking Course for Beginners",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/LrSAtPlAeCc/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "kK_Wqx3RnHk",
+      "title": "Learn English Grammar - Full Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/kK_Wqx3RnHk/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "dPm5F3m3hF0",
+      "title": "English Vocabulary Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/dPm5F3m3hF0/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "gMh6lrRry1w",
+      "title": "IELTS Full Course - Band 7+",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/gMh6lrRry1w/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "v2tJ3nzXh8I",
+      "title": "TOEFL Preparation Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/v2tJ3nzXh8I/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "UMcnK2e3s5c",
+      "title": "Cryptocurrency Full Course",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/UMcnK2e3s5c/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "W3L8c7y4B6c",
+      "title": "Blockchain Explained",
+      "channel": "freeCodeCamp",
+      "thumbnails": { "medium": { "url": "https://i.ytimg.com/vi/W3L8c7y4B6c/mqdefault.jpg" } }
+    },
+    {
+      "videoId": "yubzJw0uiE4",
+      "title":
